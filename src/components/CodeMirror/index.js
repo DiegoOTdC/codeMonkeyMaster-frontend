@@ -1,15 +1,29 @@
-import "codemirror/lib/codemirror.js";
+import React, { useState } from "react";
+import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
-import "codemirror/mode/javascript.js";
+import "codemirror/mode/javascript/javascript";
+import "codemirror/theme/material.css";
 
-import React from "react";
+export default function CodeMirrorComponent() {
+  const codeMirrorOptions = {
+    theme: "material",
+    lineNumbers: true,
+    scrollbarStyle: null,
+    lineWrapping: true,
+  };
 
-const editor = CodeMirror(document.getElementById("codeeditor"));
+  const [code, setCode] = useState("");
+  console.log(code);
 
-export default function CodeMirror() {
   return (
-    <div style={{ backgroudnColor: "#EEE" }}>
-      <div id="codeeditor"></div>
+    <div style={{ backgroundColor: "grey" }}>
+      <CodeMirror
+        value={code}
+        options={{ mode: "javascript", ...codeMirrorOptions }}
+        onBeforeChange={(editor, data, js) => {
+          setCode(js);
+        }}
+      />
     </div>
   );
 }
