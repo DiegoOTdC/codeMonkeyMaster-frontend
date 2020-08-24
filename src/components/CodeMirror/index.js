@@ -4,6 +4,8 @@ import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/theme/material.css";
 
+import { equal } from "./equal";
+
 export default function CodeMirrorComponent() {
   const codeMirrorOptions = {
     theme: "material",
@@ -14,6 +16,10 @@ export default function CodeMirrorComponent() {
 
   const [code, setCode] = useState("");
   console.log(code);
+
+  const correctAnswer = `console.log("hello world")`;
+  const whatisthis = equal(correctAnswer, code);
+  console.log("is it returning this", whatisthis);
 
   return (
     <div style={{ backgroundColor: "grey" }}>
