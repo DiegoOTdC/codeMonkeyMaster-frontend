@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { dispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { selectCorrectAnswer } from "../../store/exercise/selectors";
 import { getExerciseById } from "../../store/exercise/actions";
 
@@ -11,10 +11,11 @@ import "codemirror/theme/material.css";
 import { equal } from "./equal";
 
 export default function CodeMirrorComponent() {
-  const dipatch = useDispatch();
+  const dispatch = useDispatch();
   const correctAnswer = useSelector(selectCorrectAnswer);
   const [code, setCode] = useState("");
 
+  console.log("what is correctAnswer", correctAnswer);
   useEffect(() => {
     dispatch(getExerciseById(1));
   }, []);

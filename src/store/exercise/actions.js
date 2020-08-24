@@ -1,6 +1,7 @@
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
-import { appLoading, appDoneLoading } from "../appState/actions";
+import { appLoading, appDoneLoading, setMessage } from "../appState/actions";
+import { selectToken } from "../user/selectors";
 
 export const GET_EXERCISE_SUCCESS = "GET_EXERCISE_SUCCESS";
 
@@ -14,8 +15,8 @@ const getExerciseSuccess = (exercise) => {
 export const getExerciseById = (id) => {
   console.log("what is id in actions", id);
   return async (dispatch, getState) => {
-    const token = selectToken(getState());
-    if (token === null) return;
+    // const token = selectToken(getState());
+    // if (token === null) return;
 
     dispatch(appLoading());
     try {
