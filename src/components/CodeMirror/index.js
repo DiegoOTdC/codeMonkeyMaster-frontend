@@ -14,8 +14,9 @@ export default function CodeMirrorComponent() {
   const dispatch = useDispatch();
   const correctAnswer = useSelector(selectCorrectAnswer);
   const [code, setCode] = useState("");
+  const [message, setMessage] = useState("");
 
-  console.log("what is correctAnswer", correctAnswer);
+  //this is something we should do in the parent component I think
   useEffect(() => {
     dispatch(getExerciseById(1));
   }, []);
@@ -27,10 +28,21 @@ export default function CodeMirrorComponent() {
     lineWrapping: true,
   };
 
-  console.log(code);
-
-  const whatisthis = equal(correctAnswer, code);
-  console.log("is it returning this", whatisthis);
+  function submitAnswer() {
+    const result = equal(correctAnswer, code);
+    if (!result) {
+      setMessage({
+        backgroundColor: "red",
+        text: "oeh-oeh-ahh-ahh monkey want banana? - This answer is incorrect!",
+      });
+    }
+    if (result) {
+      setMessage({
+        backgroundColor: "green",
+        text: "Long live the king! - This answer is correct!",
+      });
+    }
+  }
 
   return (
     <div style={{ backgroundColor: "grey" }}>
@@ -41,6 +53,16 @@ export default function CodeMirrorComponent() {
           setCode(js);
         }}
       />
+
+      {message && (
+        <p
+          style={{ backgroundColor: message.backgroundColor, color: "yellow" }}
+        >
+          {message.text}
+        </p>
+      )}
+
+      <button onClick={() => submitAnswer()}>Submit</button>
     </div>
   );
 }
