@@ -12,6 +12,7 @@ const getExerciseSuccess = (exercise) => {
 };
 
 export const getExerciseById = (id) => {
+  console.log("what is id in actions", id);
   return async (dispatch, getState) => {
     const token = selectToken(getState());
     if (token === null) return;

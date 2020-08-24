@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { dispatch, useSelector } from "react-redux";
+import { selectCorrectAnswer } from "../../store/exercise/selectors";
+import { getExerciseById } from "../../store/exercise/actions";
+
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
@@ -7,6 +11,14 @@ import "codemirror/theme/material.css";
 import { equal } from "./equal";
 
 export default function CodeMirrorComponent() {
+  const dipatch = useDispatch();
+  const correctAnswer = useSelector(selectCorrectAnswer);
+  const [code, setCode] = useState("");
+
+  useEffect(() => {
+    dispatch(getExerciseById(1));
+  }, []);
+
   const codeMirrorOptions = {
     theme: "material",
     lineNumbers: true,
@@ -14,10 +26,8 @@ export default function CodeMirrorComponent() {
     lineWrapping: true,
   };
 
-  const [code, setCode] = useState("");
   console.log(code);
 
-  const correctAnswer = `console.log("hello world")`;
   const whatisthis = equal(correctAnswer, code);
   console.log("is it returning this", whatisthis);
 
