@@ -8,8 +8,6 @@ import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/theme/material.css";
 
-import { equal } from "./equal";
-
 export default function CodeMirrorComponent() {
   const dispatch = useDispatch();
   const correctAnswer = useSelector(selectCorrectAnswer);
@@ -27,6 +25,11 @@ export default function CodeMirrorComponent() {
     scrollbarStyle: null,
     lineWrapping: true,
   };
+
+  function equal(a, b) {
+    const condition2 = typeof a === "string" && typeof b === "string";
+    if (condition2) return a === b;
+  }
 
   function submitAnswer() {
     const result = equal(correctAnswer, code);
