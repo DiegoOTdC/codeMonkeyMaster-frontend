@@ -36,11 +36,9 @@ export default function Exercise() {
   console.log("what is in lvl2?", exercises_lvl2);
 
   useEffect(() => {
-    if (exerciseId === 2) {
-      dispatch(getCompletedExercises());
-      dispatch(getExerciseById(exerciseId));
-    }
-  }, []);
+    dispatch(getCompletedExercises());
+    dispatch(getExerciseById(exerciseId));
+  }, [dispatch, exerciseId]);
 
   //when should you pass to multiple choice ? when you haven't finished those exercises yet.
   //how do we know?
