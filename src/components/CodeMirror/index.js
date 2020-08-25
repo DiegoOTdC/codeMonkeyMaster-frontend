@@ -42,7 +42,7 @@ export default function CodeMirrorComponent() {
     if (result) {
       setMessage({
         backgroundColor: "green",
-        text: "Long live the king! - This answer is correct!",
+        text: "Long live the master! - This answer is correct!",
       });
     }
   }

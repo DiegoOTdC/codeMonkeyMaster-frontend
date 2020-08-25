@@ -15,26 +15,16 @@ const getExerciseSuccess = (exercise) => {
 export const getExerciseById = (id) => {
   console.log("what is id in actions", id);
   return async (dispatch, getState) => {
-    // const token = selectToken(getState());
-    // if (token === null) return;
+    const token = selectToken(getState());
+    if (token === null) return;
 
     dispatch(appLoading());
     try {
-      //uncomment after setting up route on backend
-      // const response = axios.get(`${apiUrl}/exercise/${id}`, {
-      //   headers: { Authorization: `Bearer ${token}` },
-      // });
+      const response = axios.get(`${apiUrl}/exercises/${id}/quiz`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
-      // dispatch(getExerciseSuccess(response.data));
-
-      //test
-      dispatch(
-        getExerciseSuccess({
-          name: "Map method",
-          content: "blablabla",
-          correctAnswer: `console.log("hello world")`,
-        })
-      );
+      dispatch(getExerciseSuccess(response.data));
 
       dispatch(appDoneLoading());
     } catch (error) {
