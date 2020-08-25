@@ -129,8 +129,8 @@ export const getCompletedExercises = () => {
       const response = await axios.get(`${apiUrl}/profile/completedExercises`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-
-      dispatch(getCompletedExercisesSuccess(response.data));
+      console.log("RESPONSE", response.data.exercisesCompleted);
+      dispatch(getCompletedExercisesSuccess(response.data.exercisesCompleted));
       dispatch(appDoneLoading());
     } catch (error) {
       if (error.response) {

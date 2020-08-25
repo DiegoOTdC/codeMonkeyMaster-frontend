@@ -24,22 +24,25 @@ export default function Exercise() {
 
   //completedExercises = [{},{},{}] with at least exerciseId: as key
 
-  /* this SHOULD match the exerciseId in completedExercises against the
+  //this SHOULD match the exerciseId in completedExercises against the
 
-  const [currentExercise, setCurrentExercise] = useState("");
+  // const [currentExercise, setCurrentExercise] = useState("");
 
-  for (let i = 0; i < completedExercises.length; i++) {
-    const correctExercise = exercise.filter((item) => {
-      if (completedExercises.exerciseId === item.id) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-    setCurrentExercise(correctExercise);
-  }
+  // if (completedExercises) {
+  //   for (let i = 0; i < completedExercises.length; i++) {
+  //     const correctExercise = exercise.filter((item) => {
+  //       if (completedExercises.exerciseId === item.id) {
+  //         return true;
+  //       } else {
+  //         console.log("here");
+  //         return false;
+  //       }
+  //     });
+  //     setCurrentExercise(correctExercise);
+  //   }
+  // }
 
-  console.log("what is the current exercise?", currentExercise); */
+  // console.log("what is the current exercise?", currentExercise);
 
   const exercises_lvl1 = exercise.filter((item) => {
     if (item.level === "level 1") {

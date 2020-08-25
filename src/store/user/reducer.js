@@ -9,7 +9,7 @@ const initialState = {
   token: localStorage.getItem("token"),
   name: null,
   email: null,
-  completedExercises: null,
+  completedExercises: [],
 };
 
 export default (state = initialState, action) => {
@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
     case GET_COMPLETED_EXERCISES_SUCCESS:
       return {
         ...state,
-        completedExercises: { ...state.completedExercises, ...action.payload },
+        completedExercises: [...state.completedExercises, ...action.payload],
       };
 
     case LOGIN_SUCCESS:
