@@ -26,23 +26,39 @@ export default function Exercise() {
 
   //this SHOULD match the exerciseId in completedExercises against the
 
-  // const [currentExercise, setCurrentExercise] = useState("");
+  const [currentExercise, setCurrentExercise] = useState("");
 
-  // if (completedExercises) {
-  //   for (let i = 0; i < completedExercises.length; i++) {
-  //     const correctExercise = exercise.filter((item) => {
-  //       if (completedExercises.exerciseId === item.id) {
-  //         return true;
-  //       } else {
-  //         console.log("here");
-  //         return false;
-  //       }
-  //     });
-  //     setCurrentExercise(correctExercise);
+  //only do this when currenExercise = null, otherwise too many re-renders
+
+  useEffect(() => {
+    completedExercises.forEach((item) => {
+      const correctExercise = exercise.find((x) => {
+        if (item.exerciseId !== x.id) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      setCurrentExercise(correctExercise);
+      console.log("The correct exercise", correctExercise);
+    });
+  }, [completedExercises, exercise]);
+
+  // for (let i = 0; i < completedExercises.length; i++) {
+  //   console.log("index", i);
+
+  // const correctExercise = exercise.filter((item) => {
+  //   if (completedExercises.exerciseId === item.id) {
+  //     return true;
+  //   } else {
+  //     console.log("here");
+  //     return false;
   //   }
+  // });
+  // setCurrentExercise(correctExercise);
   // }
 
-  // console.log("what is the current exercise?", currentExercise);
+  console.log("what is the current exercise?", currentExercise);
 
   const exercises_lvl1 = exercise.filter((item) => {
     if (item.level === "level 1") {
