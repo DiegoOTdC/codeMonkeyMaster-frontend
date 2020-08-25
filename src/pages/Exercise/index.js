@@ -5,8 +5,8 @@ import { getExerciseById } from "../../store/exercise/actions";
 import { selectExercise } from "../../store/exercise/selectors";
 import { selectCompletedExercises } from "../../store/user/selectors";
 import { getCompletedExercises } from "../../store/user/actions";
-import MultipleChoice from "../../components/MultipleChoice";
-import OpenQuestion from "../../components/OpenQuestion";
+import QuizCards from "../../components/QuizCards";
+import QuizCode from "../../components/QuizCode";
 
 export default function Exercise() {
   const param = useParams();
@@ -38,9 +38,9 @@ export default function Exercise() {
 
   const questionFormat = () => {
     if (currentExercise.level === "level 1") {
-      return <MultipleChoice exercise={currentExercise} />;
+      return <QuizCards exercise={currentExercise} />;
     } else if (currentExercise.level === "level 2") {
-      return <OpenQuestion exercise={currentExercise} />;
+      return <QuizCode exercise={currentExercise} />;
     } else {
       //return some loading indicator would be better
       return null;
