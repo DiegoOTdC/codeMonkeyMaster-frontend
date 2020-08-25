@@ -1,13 +1,28 @@
 .hpCard {
-  width: 18rem;
+  width: 23%;
   float: left;
-  margin: 0 1.5%;
-  width: 30%;
-  border: 1px solid black;
+  margin: 0 0 2% 5%;
 }
 
 .homeCard {
   background-color: #009973;
+}
 
-  width: 300px;
+.searchBar {
+  border: 1px solid black;
+  padding: 2px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 10px 20px 50px;
+  border-radius: 12px;
+}
+
+.hpTitle {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.cardTitle {
+  color: white;
+  text-align: center;
 }
