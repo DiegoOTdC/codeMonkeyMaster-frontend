@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getExerciseById } from "../../store/exercise/actions";
 import { selectExercise } from "../../store/exercise/selectors";
+import { selectCompletedExercises } from "../../store/user/selectors";
+import { getCompletedExercises } from "../../store/user/actions";
 import MultipleChoice from "../../components/MultipleChoice";
 
 export default function Exercise() {
@@ -12,19 +14,36 @@ export default function Exercise() {
   const exercise = useSelector(selectExercise);
   console.log("what is in exercise?", exercise);
 
+  const completedExercises = useSelector(selectCompletedExercises);
+  console.log("completed", completedExercises);
+
   const exercises_lvl1 = exercise.filter((item) => {
-    if (item.level === "level 1") return true;
+    if (item.level === "level 1") {
+      return true;
+    } else {
+      return false;
+    }
   });
   const exercises_lvl2 = exercise.filter((item) => {
-    if (item.level === "level 2") return true;
+    if (item.level === "level 2") {
+      return true;
+    } else {
+      return false;
+    }
   });
 
   console.log("what is in lvl1?", exercises_lvl1);
   console.log("what is in lvl2?", exercises_lvl2);
 
   useEffect(() => {
-    dispatch(getExerciseById(exerciseId));
+    if (exerciseId === 2) {
+      dispatch(getCompletedExercises());
+      dispatch(getExerciseById(exerciseId));
+    }
   }, []);
+
+  //when should you pass to multiple choice ? when you haven't finished those exercises yet.
+  //how do we know?
 
   return (
     <div>
