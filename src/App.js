@@ -14,9 +14,9 @@ import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
 import { Jumbotron } from "react-bootstrap";
 
-const Other = () => (
+const Exercise = () => (
   <Jumbotron>
-    <h1>Other</h1>
+    <h1>Here comes exercises</h1>
   </Jumbotron>
 );
 
@@ -35,9 +35,9 @@ function App() {
       {isLoading ? <Loading /> : null}
       <Switch>
         <Route exact path="/" component={Welcome} />
-        <Route path="/other" component={Other} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
+        <Route path="/exercise/:id" component={Exercise} />
       </Switch>
     </div>
   );
