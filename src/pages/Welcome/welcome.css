@@ -1,7 +1,6 @@
 .welcomeHeader {
   background: #009973;
   width: 100%;
-  height: 20rem;
 }
 
 .welcomeGif {
@@ -10,6 +9,7 @@
   margin-right: auto;
   align-content: center;
   width: 70%;
+  background: #009973;
 }
 
 .welcomeText {

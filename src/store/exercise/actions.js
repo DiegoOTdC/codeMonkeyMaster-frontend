@@ -5,10 +5,18 @@ import { selectToken } from "../user/selectors";
 
 export const GET_EXERCISE_SUCCESS = "GET_EXERCISE_SUCCESS";
 
-const getExerciseSuccess = (exercise) => {
+export const getExerciseSuccess = (exercise) => {
   return {
     type: GET_EXERCISE_SUCCESS,
     payload: exercise,
+  };
+};
+
+export const getExercises = () => {
+  return async (dispatch, getState) => {
+    const response = await axios.get(`${apiUrl}/exercises/list`);
+    console.log("response.data", response.data);
+    dispatch(getExerciseSuccess(response.data));
   };
 };
 
@@ -20,7 +28,7 @@ export const getExerciseById = (id) => {
 
     dispatch(appLoading());
     try {
-      const response = axios.get(`${apiUrl}/exercises/${id}/quiz`, {
+      const response = await axios.get(`${apiUrl}/exercises/${id}/quiz`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
