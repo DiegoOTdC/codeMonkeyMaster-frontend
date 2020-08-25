@@ -12,13 +12,13 @@ export default function Exercise() {
   const param = useParams();
   const exerciseId = param.id;
   const dispatch = useDispatch();
-  const exercise = useSelector(selectExercise);
+  const allCurrentExercises = useSelector(selectExercise);
   const completedExercises = useSelector(selectCompletedExercises);
   const [currentExercise, setCurrentExercise] = useState("");
 
   useEffect(() => {
     completedExercises.forEach((item) => {
-      const correctExercise = exercise.find((x) => {
+      const correctExercise = allCurrentExercises.find((x) => {
         if (item.exerciseId !== x.id) {
           return true;
         } else {
@@ -27,7 +27,7 @@ export default function Exercise() {
       });
       setCurrentExercise(correctExercise);
     });
-  }, [completedExercises, exercise]);
+  }, [completedExercises, allCurrentExercises]);
 
   console.log("what is the current exercise?", currentExercise);
 
