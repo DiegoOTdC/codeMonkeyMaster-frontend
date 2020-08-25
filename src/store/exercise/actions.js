@@ -20,9 +20,10 @@ export const getExerciseById = (id) => {
 
     dispatch(appLoading());
     try {
-      const response = axios.get(`${apiUrl}/exercises/${id}/quiz`, {
+      const response = await axios.get(`${apiUrl}/exercises/${id}/quiz`, {
         headers: { Authorization: `Bearer ${token}` },
       });
+      console.log("what is in the response?", response);
 
       dispatch(getExerciseSuccess(response.data));
 
