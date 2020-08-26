@@ -6,8 +6,6 @@ import "./homepage.css";
 
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import { headShake } from "react-animations";
-import styled, { keyframes } from "styled-components";
 
 export default function Homepage() {
   const dispatch = useDispatch();
@@ -15,11 +13,6 @@ export default function Homepage() {
 
   const [searchTerm, setSearchTerm] = useState();
   const [searchResults, setSearchResults] = useState([]);
-
-  const [isShown, setIsShown] = useState(false);
-  const Bounce = styled.div`
-    animation: 0.7s ${keyframes`${headShake}`};
-  `;
 
   useEffect(() => {
     dispatch(getExercises());
@@ -58,36 +51,26 @@ export default function Homepage() {
 
       {data.map((exercise) => {
         return (
-          <Bounce
-            onMouseEnter={() => setIsShown(true)}
-            onMouseLeave={() => setIsShown(false)}
-          >
-            <Card className="hpCard" key={exercise.id}>
-              <Card.Body className="homeCard">
-                <Link className="hpLink" to={`/exercise/${exercise.id}`}>
-                  <b className="cardTitle">{exercise.name}</b>
-                </Link>
-                <br />
-                Exercises: <br />
-                MonkeyMaster:
-              </Card.Body>
-            </Card>
-          </Bounce>
+          <Card className="hpCard" key={exercise.id}>
+            <Card.Body className="homeCard">
+              <Link className="hpLink" to={`/exercise/${exercise.id}`}>
+                <b className="cardTitle">{exercise.name}</b>
+              </Link>
+              <br />
+              Exercises: <br />
+              MonkeyMaster:
+            </Card.Body>
+          </Card>
         );
       })}
-      <Bounce
-        onMouseEnter={() => setIsShown(true)}
-        onMouseLeave={() => setIsShown(false)}
-      >
-        <Card className="hpCard">
-          <Card.Body className="homeCard">
-            <b>Random</b>
-            <br />
-            Exercises: <br />
-            MonkeyMaster:
-          </Card.Body>
-        </Card>
-      </Bounce>
+      <Card className="hpCard">
+        <Card.Body className="homeCard">
+          <b>Random</b>
+          <br />
+          Exercises: <br />
+          MonkeyMaster:
+        </Card.Body>
+      </Card>
     </div>
   );
 }

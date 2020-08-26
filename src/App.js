@@ -14,7 +14,6 @@ import Exercise from "./pages/Exercise";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
-import { Jumbotron } from "react-bootstrap";
 
 function App() {
   const dispatch = useDispatch();
