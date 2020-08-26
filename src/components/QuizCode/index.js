@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function QuizCode() {
-  return <div></div>;
+  return <div>Quiz Code</div>;
 }
