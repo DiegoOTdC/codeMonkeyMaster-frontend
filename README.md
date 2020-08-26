@@ -29,10 +29,13 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 - [wireframe](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/blob/development/Wireframe.png)
 
 ### What did we learn or find challenging
-[Stephanie](https://github.com/StephBerg86): ""
+[Stephanie](https://github.com/StephBerg86):   
+""
 
-[Darian](https://github.com/DarianRushworth): ""
+[Darian](https://github.com/DarianRushworth):   
+""
 
-[Diégo](https://github.com/DiegoOTdC): "First off I want to say, the cooperation between us went really smoothly, it was really nice to work together on this project! I think everyone right away knew what they wanted to do and if we were stuck or just needed to figure out the next step, the communication was always open and great for that. If there were mistakes or things needed to change, we all handled the feedback great I think. 
+[Diégo](https://github.com/DiegoOTdC):   
+"First off I want to say, the cooperation between us went really smoothly, it was really nice to work together on this project! I think everyone right away knew what they wanted to do and if we were stuck or just needed to figure out the next step, the communication was always open and great for that. If there were mistakes or things needed to change, we all handled the feedback great I think. 
 
 What was new for me in coding, was to really **work together in a team** like this. Which was really nice. Furthermore how to **use git better** (also in a team).  Making pull requests correctly, reviewing pull requests from others, etc. I made the [Exercise Page](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Exercise) and QuizCode component, which both had some (for me) **difficult logic**. It's always fun when it works in the end!
