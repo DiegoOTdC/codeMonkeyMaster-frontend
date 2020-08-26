@@ -22,6 +22,7 @@ This app was created in 5 days.
 
 <a name="theCreators"/> 
 <br />
+<br />
 <div align="left" style={{display="inline"}} markdown=1>
 <a href="https://github.com/StephBerg86">Stephanie Bergman</a>
 
