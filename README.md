@@ -25,6 +25,7 @@ This app was created in 5 days.
 
 <div align="left" style={{display="inline"}} markdown=1>
 <a href="https://google.com>Google</a> 
+
 [Stephanie Bergman](https://github.com/StephBerg86)      
 
 <img src="https://avatars0.githubusercontent.com/u/59935758?s=400&u=18bd0bca8dff3658188693593c16b9ec1c17ac87&v=4" width="auto" height=300 /></div>
