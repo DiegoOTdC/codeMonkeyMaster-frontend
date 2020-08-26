@@ -31,6 +31,7 @@ export const getExerciseById = (id) => {
       const response = await axios.get(`${apiUrl}/exercises/${id}/quiz`, {
         headers: { Authorization: `Bearer ${token}` },
       });
+      console.log("what is in the response?", response);
 
       dispatch(getExerciseSuccess(response.data));
 
