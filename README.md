@@ -26,6 +26,24 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 - [MessageBox](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/components/MessageBox)
 - [Navigation](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/components/Navigation)
 
+### History Pull Requests
+**Frontend**
+[Diego Code Mirror Component](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/1)
+[Stephanie Welcome Page](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/2)
+[Diego Exercise Page](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/3)
+[Diego Fix Logic On Exercise page](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/4)
+[Stephanie Home Page](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/5)
+[Diego Quiz Code](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/6)
+[Diego Fixed The Time Logic](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/7)
+
+**Backend**
+[Darian Models](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/1)
+[Darian Routers](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/2)
+[Darian Quiz Setup 1](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/3)
+[Darian Quiz Setup 2](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/4)
+[Darian Merge Pull Request #3](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/5)
+[Darian Scaled Down To One Join Table](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/6)
+
 ### Important links
 - [backend](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend)
 - [project board](https://github.com/orgs/codeMonkeyMasters/projects/1)
