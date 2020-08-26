@@ -22,7 +22,9 @@ This app was created in 5 days.
 
 <a name="theCreators"/> 
 
-<div><h2 style={{display: "inline"}}> The Creators </h2> <div align="right" style={{display: "inline"}}>hello</div></div>
+<div align="right">[Top](#Intro)</div>
+
+## The Creators 
 - [Stephanie Bergman](https://github.com/StephBerg86)
 - [Darian Rushworth](https://github.com/DarianRushworth)
 - [Diégo Teixeira da Costa](https://github.com/DiegoOTdC)
