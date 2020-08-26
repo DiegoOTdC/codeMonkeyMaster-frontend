@@ -31,10 +31,16 @@ This app was created in 5 days.
         
 <div align="center" markdown=1>
 <a href="https://github.com/DarianRushworth">Darian Rushworth</a>
+<br /> 
+<br />
+<img src="https://avatars3.githubusercontent.com/u/65953247?s=400&u=121ceb6d68e5377b215bdb9c59052ac4e5b06ea3&v=4" width="auto" height=300 />
 </div>
          
 <div align="right" markdown=1>
 <a href="https://github.com/DiegoOTdC">Diégo Teixeira da Costa</a>
+<br /> 
+<br />
+<img src="https://avatars1.githubusercontent.com/u/66380445?s=400&u=19685fc849bb9e3a33e263c32dc48ca7c9244169&v=4" width="auto" height=300 />
 </div>
 
 
