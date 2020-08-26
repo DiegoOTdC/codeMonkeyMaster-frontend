@@ -8,6 +8,15 @@ With this app you will learn about array methods in a fun and challenging way. Y
 - [Darian Rushworth](https://github.com/DarianRushworth)
 - [Diégo Teixeira da Costa](https://github.com/DiegoOTdC)
 
+**Welcome page**
+[go to code](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Welcome)
+
+**Home page**
+
+
+**Exercise page**
+
+
 **Important links**
 - [backend](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend)
 - [project board](https://github.com/orgs/codeMonkeyMasters/projects/1)
