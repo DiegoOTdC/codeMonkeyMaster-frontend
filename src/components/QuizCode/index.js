@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getExerciseById } from "../../store/exercise/actions";
+import { updateCompletedExercise } from "../../store/user/actions";
 
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
@@ -72,7 +73,8 @@ export default function QuizCode(props) {
     const second = splitFinish[2] - splitStart[2];
 
     const result = `${hour}:${minute}:${second}`;
-    dispatch(someAction(result));
+
+    dispatch(updateCompletedExercise(exerciseId, id, result, "experience"));
   }, [finish]);
 
   console.log("what is in start", start);

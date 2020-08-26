@@ -123,15 +123,40 @@ export const getCompletedExercises = () => {
   return async (dispatch, getState) => {
     const token = selectToken(getState());
     if (token === null) return;
-    console.log("token", token);
+
     dispatch(appLoading());
     try {
       const response = await axios.get(`${apiUrl}/profile/completedExercises`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      console.log("RESPONSE", response.data.exercisesCompleted);
+
       dispatch(getCompletedExercisesSuccess(response.data.exercisesCompleted));
       dispatch(appDoneLoading());
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.message);
+      } else {
+        console.log(error);
+      }
+      dispatch(appDoneLoading());
+    }
+  };
+};
+
+export const updateCompletedExercise = (exerciseId, quizId, timeTaken, exp) => {
+  return async (dispatch, getState) => {
+    const token = selectToken(getState());
+    if (token === null) return;
+
+    dispatch(appLoading());
+    try {
+      const response = await axios.get(
+        `${apiUrl}/exercises/${exerciseId}/completed/${quizId}`,
+        { timeTaken, exp },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      console.log("what is in the response?", response);
     } catch (error) {
       if (error.response) {
         console.log(error.response.message);
