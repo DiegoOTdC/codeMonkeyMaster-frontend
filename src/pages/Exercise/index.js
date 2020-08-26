@@ -19,7 +19,7 @@ export default function Exercise() {
   useEffect(() => {
     completedExercises.forEach((item) => {
       const correctExercise = allCurrentExercises.find((x) => {
-        if (item.exerciseId !== x.id) {
+        if (item.quizQuestionId !== x.id) {
           return true;
         } else {
           return false;
