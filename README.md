@@ -24,9 +24,7 @@ This app was created in 5 days.
 
 
 <div align="left" style={{display="inline"}} markdown=1>
-<a href="https://google.com>Google</a> 
-
-[Stephanie Bergman](https://github.com/StephBerg86)      
+<a href="https://github.com/StephBerg86">Stephanie Bergman</a>    
 
 <img src="https://avatars0.githubusercontent.com/u/59935758?s=400&u=18bd0bca8dff3658188693593c16b9ec1c17ac87&v=4" width="auto" height=300 /></div>
 <div align="center" style={{display="inline"}}><img src="https://avatars3.githubusercontent.com/u/65953247?s=400&u=121ceb6d68e5377b215bdb9c59052ac4e5b06ea3&v=4" width="auto" height=300 /></div>
