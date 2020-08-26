@@ -147,10 +147,9 @@ export const updateCompletedExercise = (exerciseId, quizId, timeTaken, exp) => {
   return async (dispatch, getState) => {
     const token = selectToken(getState());
     if (token === null) return;
-    console.log("do we get here already?");
     dispatch(appLoading());
     try {
-      const response = await axios.get(
+      const response = await axios.patch(
         `${apiUrl}/exercises/${exerciseId}/completed/${quizId}`,
         { timeTaken, exp },
         { headers: { Authorization: `Bearer ${token}` } }

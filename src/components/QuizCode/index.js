@@ -99,9 +99,6 @@ export default function QuizCode(props) {
       dispatch(updateCompletedExercise(exerciseId, id, result, experience()));
   }, [start, finish]);
 
-  console.log("what is in start", start);
-  console.log("what is in finish", finish);
-
   return (
     <div style={{ margin: "auto", width: "75%", backgroundColor: "grey" }}>
       {start && <h1>{question}</h1>}

@@ -19,7 +19,7 @@ export default function Exercise() {
   useEffect(() => {
     completedExercises.forEach((item) => {
       const correctExercise = allCurrentExercises.find((x) => {
-        if (/*item.quizQuestionId*/ 1 !== x.id && 2 !== x.id) {
+        if (item.quizQuestionId !== x.id) {
           return true;
         } else {
           return false;
@@ -27,9 +27,14 @@ export default function Exercise() {
       });
       setCurrentExercise(correctExercise);
     });
-  }, [completedExercises, allCurrentExercises]);
 
-  console.log("what is the current exercise?", currentExercise);
+    if (completedExercises.length === 0) {
+      const correctExercise = allCurrentExercises.find(
+        (item) => item.level === "level 1"
+      );
+      setCurrentExercise(correctExercise);
+    }
+  }, [completedExercises, allCurrentExercises]);
 
   useEffect(() => {
     dispatch(getCompletedExercises());
@@ -37,9 +42,9 @@ export default function Exercise() {
   }, [dispatch, exerciseId]);
 
   const questionFormat = () => {
-    if (currentExercise.level === "level 1") {
+    if (currentExercise && currentExercise.level === "level 1") {
       return <QuizCards exercise={currentExercise} />;
-    } else if (currentExercise.level === "level 2") {
+    } else if (currentExercise && currentExercise.level === "level 2") {
       return <QuizCode exercise={currentExercise} />;
     } else {
       //return some loading indicator would be better
