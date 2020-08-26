@@ -1,5 +1,96 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getExerciseById } from "../../store/exercise/actions";
 
-export default function QuizCode() {
-  return <div>Quiz Code</div>;
+import { Controlled as CodeMirror } from "react-codemirror2";
+import "codemirror/lib/codemirror.css";
+import "codemirror/mode/javascript/javascript";
+import "codemirror/theme/material.css";
+
+export default function QuizCode(props) {
+  const { exercise } = props;
+  const { answer, question, exerciseId, id } = exercise;
+  const dispatch = useDispatch();
+  const [code, setCode] = useState("");
+  const [message, setMessage] = useState("");
+  const [start, setStart] = useState("");
+  const [finish, setFinish] = useState("");
+
+  const date = new Date();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  console.log(`Hours: ${hours}, Minutes: ${minutes}, Seconds:${seconds}`);
+
+  // ("send time to backend as 00:00:00");
+
+  //this is something we should do in the parent component I think
+  useEffect(() => {
+    dispatch(getExerciseById(1));
+  }, []);
+
+  const codeMirrorOptions = {
+    theme: "material",
+    lineNumbers: true,
+    scrollbarStyle: null,
+    lineWrapping: true,
+  };
+
+  function equal(a, b) {
+    const condition2 = typeof a === "string" && typeof b === "string";
+    if (condition2) return a === b;
+  }
+
+  function startExercise() {
+    setStart(`${hours}:${minutes}:${seconds}`);
+  }
+  console.log("what is in start", start);
+
+  function finishExercise() {
+    const result = equal(answer, code);
+    if (!result) {
+      setMessage({
+        backgroundColor: "red",
+        text: "oeh-oeh-ahh-ahh monkey want banana? - This answer is incorrect!",
+      });
+    }
+    if (result) {
+      setMessage({
+        backgroundColor: "green",
+        text: "Long live the master! - This answer is correct!",
+      });
+      setFinish(`${hours}:${minutes}:${seconds}`);
+      const result = finish.split(":");
+      console.log("what is the result?", result[1]);
+    }
+  }
+  console.log("what is in start", start);
+  console.log("what is in finish", finish);
+
+  return (
+    <div style={{ margin: "auto", width: "75%", backgroundColor: "grey" }}>
+      {start && <h1>{question}</h1>}
+      <CodeMirror
+        value={code}
+        options={{ mode: "javascript", ...codeMirrorOptions }}
+        onBeforeChange={(editor, data, js) => {
+          setCode(js);
+        }}
+      />
+
+      {message && (
+        <p
+          style={{ backgroundColor: message.backgroundColor, color: "yellow" }}
+        >
+          {message.text}
+        </p>
+      )}
+
+      {!start ? (
+        <button onClick={() => startExercise()}>Start</button>
+      ) : (
+        <button onClick={() => finishExercise()}>Finish</button>
+      )}
+    </div>
+  );
 }
