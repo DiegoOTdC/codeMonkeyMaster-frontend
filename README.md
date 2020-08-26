@@ -21,8 +21,7 @@ This app was created in 5 days.
 - [What did we learn or find challenging](#Challenges)
 
 <a name="theCreators"/> 
-
-
+<br />
 <div align="left" style={{display="inline"}} markdown=1>
 <a href="https://github.com/StephBerg86">Stephanie Bergman</a>
 
