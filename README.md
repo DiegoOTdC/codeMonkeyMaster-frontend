@@ -15,14 +15,14 @@ This app was created in 5 days.
 
 <a name="theCreators"/>   
 
-## The creators   
+## The Creators   
 - [Stephanie Bergman](https://github.com/StephBerg86)
 - [Darian Rushworth](https://github.com/DarianRushworth)
 - [Diégo Teixeira da Costa](https://github.com/DiegoOTdC)
 
 <a name="Pages"/> 
 
-### Pages
+## Pages
 We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-redux-jwt-bootstrap-template) that set up a base with a login and signup page, navbar and other things. We know how to do this from scratch, but decided we wanted to be able to spend more time on more challenging things.
 
 - [Login](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Login)
@@ -33,7 +33,7 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 
 <a name="Components"/> 
 
-### Components
+## Components
 
 - [QuizCode](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/components/QuizCode)
 - [Loading](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/components/Loading)
@@ -42,7 +42,7 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 
 <a name="HistoryPullRequests"/> 
 
-### History Pull Requests
+## History Pull Requests
 **Frontend**   
 1. [Diego Code Mirror Component](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/1)   
 2. [Stephanie Welcome Page](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/2)   
@@ -62,7 +62,7 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 
 <a name="ImportantLinks"/> 
 
-### Important links
+## Important links
 - [backend](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend)
 - [project board](https://github.com/orgs/codeMonkeyMasters/projects/1)
 - [database diagram](https://dbdiagram.io/d/5f43890d7b2e2f40e9de85a3)
@@ -70,7 +70,7 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 
 <a name="Challenges"/> 
 
-### What did we learn or find challenging
+## What did we learn or find challenging
 [Stephanie](https://github.com/StephBerg86):   
 ""
 
