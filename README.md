@@ -1,6 +1,11 @@
 # Code Monkey Master
 Group project - Code Monkey Master - App to learn about array methods and go from code monkey to code master!
 
+## The creators ##
+- [Stephanie Bergman](https://github.com/StephBerg86)
+- [Darian Rushworth](https://github.com/DarianRushworth)
+- [Diégo Teixeira da Costa](https://github.com/DiegoOTdC)
+
 **Important links**
 - [backend](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend)
 - [project board](https://github.com/orgs/codeMonkeyMasters/projects/1)
