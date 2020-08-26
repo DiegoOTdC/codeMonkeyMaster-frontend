@@ -72,6 +72,7 @@ export default function QuizCode(props) {
     const second = splitFinish[2] - splitStart[2];
 
     const result = `${hour}:${minute}:${second}`;
+    dispatch(someAction(result));
   }, [finish]);
 
   console.log("what is in start", start);
