@@ -7,8 +7,11 @@ This app was created in 5 days.
 
 [**Checkout the working version**]()
 
+<a name="TableOfContents"/> 
+
 ## Table of Contents 
 - [Intro](#Intro)
+- [Table of Contents](#TableOfContents)
 - [The Creators](#theCreators)
 - [User Stories](#UserStories)
 - [Pages](#Pages)
