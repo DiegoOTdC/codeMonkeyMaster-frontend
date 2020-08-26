@@ -60,10 +60,20 @@ export default function QuizCode(props) {
         text: "Long live the master! - This answer is correct!",
       });
       setFinish(`${hours}:${minutes}:${seconds}`);
-      const result = finish.split(":");
-      console.log("what is the result?", result[1]);
     }
   }
+
+  useEffect(() => {
+    const splitStart = start.split(":");
+    const splitFinish = finish.split(":");
+
+    const hour = splitFinish[0] - splitStart[0];
+    const minute = splitFinish[1] - splitStart[1];
+    const second = splitFinish[2] - splitStart[2];
+
+    const result = `${hour}:${minute}:${second}`;
+  }, [finish]);
+
   console.log("what is in start", start);
   console.log("what is in finish", finish);
 
