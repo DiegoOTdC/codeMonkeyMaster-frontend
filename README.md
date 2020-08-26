@@ -22,9 +22,7 @@ This app was created in 5 days.
 
 <a name="theCreators"/> 
 
-const top = [Intro](#Intro)
-
-<div align="right">{top}</div>
+<div align="right">`${ [Intro](#Intro) }`</div>
 
 ## The Creators 
 - [Stephanie Bergman](https://github.com/StephBerg86)
