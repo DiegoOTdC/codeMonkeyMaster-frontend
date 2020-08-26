@@ -7,9 +7,11 @@ This app was created in 5 days.
 
 ### Table of Contents 
 - [The Creators](#theCreators)
--
--
--
+- [Pages](#Pages)
+- [Components](#Components)
+- [History of Pull Requests](#HistoryPullRequests)
+- [Important Links](#ImportantLinks)
+- [What did we learn or find challenging](#Challenges)
 
 <a name="theCreators"/>   
 
@@ -17,6 +19,8 @@ This app was created in 5 days.
 - [Stephanie Bergman](https://github.com/StephBerg86)
 - [Darian Rushworth](https://github.com/DarianRushworth)
 - [Diégo Teixeira da Costa](https://github.com/DiegoOTdC)
+
+<a name="Pages"/> 
 
 ### Pages
 We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-redux-jwt-bootstrap-template) that set up a base with a login and signup page, navbar and other things. We know how to do this from scratch, but decided we wanted to be able to spend more time on more challenging things.
@@ -27,12 +31,16 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 - [Home](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Homepage) 
 - [Exercise](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Exercise)
 
+<a name="Components"/> 
+
 ### Components
 
 - [QuizCode](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/components/QuizCode)
 - [Loading](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/components/Loading)
 - [MessageBox](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/components/MessageBox)
 - [Navigation](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/components/Navigation)
+
+<a name="HistoryPullRequests"/> 
 
 ### History Pull Requests
 **Frontend**   
@@ -52,11 +60,15 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 5. [Darian Merge Pull Request #3](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/5)   
 6. [Darian Scaled Down To One Join Table](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/6)   
 
+<a name="ImportantLinks"/> 
+
 ### Important links
 - [backend](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend)
 - [project board](https://github.com/orgs/codeMonkeyMasters/projects/1)
 - [database diagram](https://dbdiagram.io/d/5f43890d7b2e2f40e9de85a3)
 - [wireframe](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/blob/development/Wireframe.png)
+
+<a name="Challenges"/> 
 
 ### What did we learn or find challenging
 [Stephanie](https://github.com/StephBerg86):   
