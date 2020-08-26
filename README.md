@@ -20,7 +20,8 @@ This app was created in 5 days.
 - [Important Links](#ImportantLinks)
 - [What did we learn or find challenging](#Challenges)
 
-<a name="theCreators"/>   
+<a name="theCreators"/> 
+  
 <div style="text-align: right"> your-text-here </div>
 ## The Creators 
 - [Stephanie Bergman](https://github.com/StephBerg86)
