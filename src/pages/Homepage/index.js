@@ -64,7 +64,7 @@ export default function Homepage() {
           >
             <Card className="hpCard" key={exercise.id}>
               <Card.Body className="homeCard">
-                <Link className="hpLink" to="/exercises/:id">
+                <Link className="hpLink" to={`/exercise/${exercise.id}`}>
                   <b className="cardTitle">{exercise.name}</b>
                 </Link>
                 <br />
