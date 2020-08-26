@@ -5,7 +5,14 @@ This app was created in 5 days.
 
 [**Checkout the working version**]()
 
-## The creators ##
+## Table of Contents 
+- [The Creators](#theCreators)
+-
+-
+-
+
+<a name="theCreators"/>
+## The creators 
 - [Stephanie Bergman](https://github.com/StephBerg86)
 - [Darian Rushworth](https://github.com/DarianRushworth)
 - [Diégo Teixeira da Costa](https://github.com/DiegoOTdC)
