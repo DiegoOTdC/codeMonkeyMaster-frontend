@@ -10,11 +10,7 @@ With this app you will learn about array methods in a fun and challenging way. Y
 
 **The pages**
 - [Welcome](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Welcome)
-
-**Home page**   
-- [Home](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Homepage)
-
-**Exercise page**   
+- [Home](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Homepage) 
 - [Exercise](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Exercise)
 
 **Important links**
