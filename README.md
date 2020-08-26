@@ -12,10 +12,10 @@ With this app you will learn about array methods in a fun and challenging way. Y
 [go to code](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Welcome)
 
 **Home page**
-
+[go to code](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Homepage)
 
 **Exercise page**
-
+[go to code](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Exercise)
 
 **Important links**
 - [backend](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend)
