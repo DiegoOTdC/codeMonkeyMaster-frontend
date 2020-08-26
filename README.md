@@ -1,7 +1,7 @@
 # Code Monkey Master
-Group project - Code Monkey Master - App to learn about array methods and go from code monkey to code master!
+With this app you will learn about array methods in a fun and challenging way. You will start as code monkey and finish as code master!
 
-[**Go here for a working version**]()
+[**Checkout the working version**]()
 
 ## The creators ##
 - [Stephanie Bergman](https://github.com/StephBerg86)
