@@ -16,6 +16,7 @@ export default function Welcome() {
           <i>array methods</i>. <br />
           You will start as a code monkey but if you complete all the exercises
           you can become the ultimate code master!
+        </p>
           <p>
             <br />
             <b>
@@ -24,7 +25,6 @@ export default function Welcome() {
               </Link>{" "}
               for free and start your code challenge now!
             </b>
-          </p>
         </p>
       </div>
     </>

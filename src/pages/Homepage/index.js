@@ -16,7 +16,7 @@ export default function Homepage() {
 
   useEffect(() => {
     dispatch(getExercises());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (!searchTerm) {
@@ -27,10 +27,10 @@ export default function Homepage() {
       );
       setSearchResults(results);
     }
-  }, [searchTerm]);
-  console.log("test", searchResults);
-  console.log("search", searchTerm);
-  console.log("exercises", exercises);
+  }, [searchTerm, exercises]);
+  // console.log("test", searchResults);
+  // console.log("search", searchTerm);
+  // console.log("exercises", exercises);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);

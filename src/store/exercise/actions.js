@@ -20,7 +20,7 @@ export const getExercises = () => {
         Authorization: `Bearer ${tokenNeeded}`
       }
     });
-    console.log("response.data", response.data);
+    // console.log("response.data", response.data);
     dispatch(getExerciseSuccess(response.data));
   };
 };
