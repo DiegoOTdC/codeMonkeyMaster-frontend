@@ -8,17 +8,12 @@ import MessageBox from "./components/MessageBox";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Welcome from "./pages/Welcome";
+import Exercise from "./pages/Exercise";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
 import { Jumbotron } from "react-bootstrap";
-
-const Exercise = () => (
-  <Jumbotron>
-    <h1>Here comes exercises</h1>
-  </Jumbotron>
-);
 
 function App() {
   const dispatch = useDispatch();
