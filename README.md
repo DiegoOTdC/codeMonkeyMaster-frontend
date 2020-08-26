@@ -34,7 +34,7 @@ This app was created in 5 days.
 <a href="https://github.com/DarianRushworth">Darian Rushworth</a>
 <br /> 
 <br />
-<img src="https://avatars3.githubusercontent.com/u/65953247?s=400&u=121ceb6d68e5377b215bdb9c59052ac4e5b06ea3&v=4" width="auto" height=300 />
+<img src="./monkey-see.png" width="auto" height=300 /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://avatars3.githubusercontent.com/u/65953247?s=400&u=121ceb6d68e5377b215bdb9c59052ac4e5b06ea3&v=4" width="auto" height=300 />
 </div>
          
 <div align="right" markdown=1>
