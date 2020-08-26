@@ -1,0 +1,9 @@
+.hintCard {
+  width: 50%;
+}
+
+.hintBody {
+  border: 1px solid black;
+  background-color: rgb(241, 243, 146);
+  color: black;
+}
