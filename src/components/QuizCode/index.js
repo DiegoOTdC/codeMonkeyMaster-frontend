@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getExerciseById } from "../../store/exercise/actions";
 import { updateCompletedExercise } from "../../store/user/actions";
 
@@ -63,13 +63,39 @@ export default function QuizCode(props) {
     const splitStart = start.split(":");
     const splitFinish = finish.split(":");
 
-    const hour = splitFinish[0] - splitStart[0];
-    const minute = splitFinish[1] - splitStart[1];
-    const second = splitFinish[2] - splitStart[2];
+    const startTimeInSeconds =
+      parseInt(splitStart[0]) * 3600 +
+      parseInt(splitStart[1]) * 60 +
+      parseInt(splitStart[2]);
+    const finishTimeInSeconds =
+      parseInt(splitFinish[0]) * 3600 +
+      parseInt(splitFinish[1]) * 60 +
+      parseInt(splitFinish[2]);
 
-    const result = `${hour}:${minute}:${second}`;
+    const result = finishTimeInSeconds - startTimeInSeconds;
+    const seconds = result % 60;
+    const allMinutes = result / 60;
+
+    const finalTime = () => {
+      if (allMinutes < 60) {
+        const minutes = allMinutes;
+        const hour = 0;
+        return `${hour}:${Math.floor(minutes)}:${seconds}`;
+      } else {
+        const hour = allMinutes / 60;
+        const minutes = allMinutes % 60;
+        return `${Math.floor(hour)}:${Math.floor(minutes)}:${seconds}`;
+      }
+    };
+
+    const time = finalTime();
+    const splitTime = time.split(":");
 
     const experience = () => {
+      const hour = parseInt(splitTime[0]);
+      const minute = parseInt(splitTime[1]);
+      const second = parseInt(splitTime[2]);
+
       if (
         (hour === 0 && minute <= 3 && second === 0) ||
         (hour === 0 && minute <= 2 && second < 60)
@@ -91,8 +117,10 @@ export default function QuizCode(props) {
     };
 
     finish &&
-      dispatch(updateCompletedExercise(exerciseId, id, result, experience()));
-  }, [start, finish]);
+      dispatch(
+        updateCompletedExercise(exerciseId, id, finalTime(), experience())
+      );
+  }, [dispatch, exerciseId, id, start, finish]);
 
   return (
     <div style={{ margin: "auto", width: "75%", backgroundColor: "grey" }}>
