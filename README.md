@@ -88,7 +88,8 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 
 ## What did we learn or find challenging
 [Stephanie](https://github.com/StephBerg86):   
-""
+"For me this was my first project working as a (remote) team. This is something that can be pretty challenging, but I have to say that this went really well with our team. The communication between us was very clear and everybody worked hard, so I learned that I enjoy to work in a team. 
+Using Git branches was also a new thing for me. This project was perfect to experiment with that and in the end it worked out great. In this project I also took a bit more time for the styling part by trying out some small animations."
 
 [Darian](https://github.com/DarianRushworth):   
 ""
