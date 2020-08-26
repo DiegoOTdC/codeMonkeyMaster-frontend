@@ -13,6 +13,8 @@ This app was created in 5 days.
 ### Pages
 We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-redux-jwt-bootstrap-template) that set up a base with a login and signup page, navbar and other things. We know how to do this from scratch, but decided we wanted to be able to spend more time on more challenging things.
 
+- [Login](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Login)
+- [SignUp](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/SignUp)
 - [Welcome](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Welcome)
 - [Home](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Homepage) 
 - [Exercise](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Exercise)
