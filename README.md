@@ -12,6 +12,7 @@ This app was created in 5 days.
 -
 
 <a name="theCreators"/>   
+
 ### The creators   
 - [Stephanie Bergman](https://github.com/StephBerg86)
 - [Darian Rushworth](https://github.com/DarianRushworth)
