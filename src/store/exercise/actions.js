@@ -14,7 +14,12 @@ export const getExerciseSuccess = (exercise) => {
 
 export const getExercises = () => {
   return async (dispatch, getState) => {
-    const response = await axios.get(`${apiUrl}/exercises/list`);
+    const tokenNeeded = getState().user.token
+    const response = await axios.get(`${apiUrl}/exercises/list`,{
+      headers: {
+        Authorization: `Bearer ${tokenNeeded}`
+      }
+    });
     console.log("response.data", response.data);
     dispatch(getExerciseSuccess(response.data));
   };

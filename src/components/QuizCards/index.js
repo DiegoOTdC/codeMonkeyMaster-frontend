@@ -152,6 +152,7 @@ export default function QuizCards(props){
                 bg={correctOrNot()}
                 style={{
                     width: "60rem",
+                    height: "30rem"
                 }}>
                 <Card.Body>
                     <Card.Title>
