@@ -155,7 +155,9 @@ export const updateCompletedExercise = (exerciseId, quizId, timeTaken, exp) => {
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      console.log("what is in the response?", response);
+      if (response.status === 202) {
+        dispatch(appDoneLoading());
+      }
     } catch (error) {
       if (error.response) {
         console.log(error.response.message);
