@@ -1,3 +1,5 @@
+<a name="Intro"/> 
+
 # Code Monkey Master
 With this app you will learn about array methods in a fun and challenging way. You will start as code monkey and finish as code master!
 
@@ -6,7 +8,9 @@ This app was created in 5 days.
 [**Checkout the working version**]()
 
 ## Table of Contents 
+- [Intro](#Intro)
 - [The Creators](#theCreators)
+- [User Stories](#UserStories)
 - [Pages](#Pages)
 - [Components](#Components)
 - [History of Pull Requests](#HistoryPullRequests)
@@ -19,6 +23,13 @@ This app was created in 5 days.
 - [Stephanie Bergman](https://github.com/StephBerg86)
 - [Darian Rushworth](https://github.com/DarianRushworth)
 - [Diégo Teixeira da Costa](https://github.com/DiegoOTdC)
+
+<a name="UserStories"/> 
+
+## User Stories
+-
+-
+-
 
 <a name="Pages"/> 
 
