@@ -8,7 +8,7 @@ With this app you will learn about array methods in a fun and challenging way. Y
 - [Darian Rushworth](https://github.com/DarianRushworth)
 - [Diégo Teixeira da Costa](https://github.com/DiegoOTdC)
 
-**Welcome page**
+**Welcome page**   
 [go to code](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/tree/development/src/pages/Welcome)
 
 **Home page**
