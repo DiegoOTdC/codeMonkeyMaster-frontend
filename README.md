@@ -22,7 +22,7 @@ This app was created in 5 days.
 
 <a name="theCreators"/> 
   
-->text
+->text<-
 
 ## The Creators 
 - [Stephanie Bergman](https://github.com/StephBerg86)
