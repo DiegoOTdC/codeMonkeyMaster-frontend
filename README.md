@@ -22,7 +22,7 @@ This app was created in 5 days.
 
 <a name="theCreators"/> 
   
-<div style="text-align: right"> your-text-here </div>
+->text
 
 ## The Creators 
 - [Stephanie Bergman](https://github.com/StephBerg86)
