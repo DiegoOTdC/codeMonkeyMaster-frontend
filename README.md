@@ -27,6 +27,8 @@ This app was created in 5 days.
 <br /> 
 <br />
 <img src="https://avatars0.githubusercontent.com/u/59935758?s=400&u=18bd0bca8dff3658188693593c16b9ec1c17ac87&v=4" width="auto" height=300 /> 
+<img src="https://www.publicdomainpictures.net/pictures/290000/velka/monkeys-background.png" width="auto" height=300 /> 
+
 </div>
         
 <div align="center" markdown=1>
