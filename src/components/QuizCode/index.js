@@ -28,7 +28,7 @@ export default function QuizCode(props) {
   //this is something we should do in the parent component I think
   useEffect(() => {
     dispatch(getExerciseById(1));
-  }, []);
+  }, [dispatch]);
 
   const codeMirrorOptions = {
     theme: "material",
@@ -74,8 +74,30 @@ export default function QuizCode(props) {
 
     const result = `${hour}:${minute}:${second}`;
 
-    dispatch(updateCompletedExercise(exerciseId, id, result, "experience"));
-  }, [finish]);
+    const experience = () => {
+      if (
+        (hour === 0 && minute <= 3 && second === 0) ||
+        (hour === 0 && minute <= 2 && second < 60)
+      ) {
+        return 50;
+      }
+      if (minute > 6) {
+        return 40;
+      }
+      if (minute > 9) {
+        return 30;
+      }
+      if (minute > 12) {
+        return 20;
+      }
+      if (minute > 15) {
+        return 10;
+      }
+    };
+
+    finish &&
+      dispatch(updateCompletedExercise(exerciseId, id, result, experience()));
+  }, [start, finish]);
 
   console.log("what is in start", start);
   console.log("what is in finish", finish);

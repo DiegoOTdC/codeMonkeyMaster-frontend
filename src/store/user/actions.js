@@ -147,7 +147,7 @@ export const updateCompletedExercise = (exerciseId, quizId, timeTaken, exp) => {
   return async (dispatch, getState) => {
     const token = selectToken(getState());
     if (token === null) return;
-
+    console.log("do we get here already?");
     dispatch(appLoading());
     try {
       const response = await axios.get(
