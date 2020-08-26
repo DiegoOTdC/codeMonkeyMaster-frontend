@@ -1,5 +1,5 @@
 .hpCard {
-  width: 23%;
+  width: 26.5%;
   float: left;
   margin: 0 0 2% 5%;
 }
@@ -8,21 +8,24 @@
   background-color: #009973;
 }
 
+.hpLink {
+  color: #fff;
+}
+.hpLink:hover {
+  color: #000;
+}
+
 .searchBar {
   border: 1px solid black;
   padding: 2px 20px;
   text-decoration: none;
   font-size: 14px;
-  margin: 10px 20px 50px;
+  margin: 10px 50px 50px;
   border-radius: 12px;
+  overflow: hidden;
 }
 
 .hpTitle {
-  margin-left: 20px;
+  margin-left: 50px;
   margin-top: 10px;
-}
-
-.cardTitle {
-  color: white;
-  text-align: center;
 }

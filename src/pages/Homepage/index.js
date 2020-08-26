@@ -5,6 +5,7 @@ import { selectMethod } from "../../store/exercise/selectors";
 import "./homepage.css";
 
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 export default function Homepage() {
   const dispatch = useDispatch();
@@ -15,14 +16,21 @@ export default function Homepage() {
 
   useEffect(() => {
     dispatch(getExercises());
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
-    const results = exercises.filter((exercise) =>
-      exercise.name.includes(searchTerm)
-    );
-    setSearchResults(results);
+    if (!searchTerm) {
+      setSearchResults(exercises);
+    } else {
+      const results = exercises.filter((exercise) =>
+        exercise.content.includes(searchTerm)
+      );
+      setSearchResults(results);
+    }
   }, [searchTerm]);
+  console.log("test", searchResults);
+  console.log("search", searchTerm);
+  console.log("exercises", exercises);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -36,17 +44,18 @@ export default function Homepage() {
       <input
         className="searchBar"
         placeholder="Search method"
-        type="text"
-        value={searchTerm}
+        value={searchTerm || ""}
         onChange={handleChange}
       />
       <br />
 
       {data.map((exercise) => {
         return (
-          <Card className="hpCard">
+          <Card className="hpCard" key={exercise.id}>
             <Card.Body className="homeCard">
-              <b className="cardTitle">{exercise.name}</b>
+              <Link className="hpLink" to="/exercises/:id">
+                <b className="cardTitle">{exercise.name}</b>
+              </Link>
               <br />
               Exercises: <br />
               MonkeyMaster:
@@ -56,7 +65,7 @@ export default function Homepage() {
       })}
       <Card className="hpCard">
         <Card.Body className="homeCard">
-          <b className="cardTitle">Random</b>
+          <b>Random</b>
           <br />
           Exercises: <br />
           MonkeyMaster:
