@@ -21,11 +21,7 @@ export default function QuizCode(props) {
   const hours = date.getHours();
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
-  console.log(`Hours: ${hours}, Minutes: ${minutes}, Seconds:${seconds}`);
 
-  // ("send time to backend as 00:00:00");
-
-  //this is something we should do in the parent component I think
   useEffect(() => {
     dispatch(getExerciseById(1));
   }, [dispatch]);
@@ -45,7 +41,6 @@ export default function QuizCode(props) {
   function startExercise() {
     setStart(`${hours}:${minutes}:${seconds}`);
   }
-  console.log("what is in start", start);
 
   function finishExercise() {
     const result = equal(answer, code);
