@@ -29,7 +29,7 @@ export default function Homepage() {
       );
       setSearchResults(results);
     }
-  }, [searchTerm]);
+  }, [searchTerm, exercises]);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);

@@ -1,11 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+// import { useHistory } from "react-router";
 import { logOut } from "../../store/user/actions";
 import { selectUser } from "../../store/user/selectors";
 import Nav from "react-bootstrap/Nav";
+import Homepage from "../../pages/Homepage";
 
 export default function LoggedIn() {
   const dispatch = useDispatch();
+  // const history = useHistory();
   const user = useSelector(selectUser);
   return (
     <>
@@ -22,7 +25,10 @@ export default function LoggedIn() {
           fontSize: "16px",
           borderRadius: "8px",
         }}
-        onClick={() => dispatch(logOut())}
+        onClick={() => {
+          dispatch(logOut());
+          // history.push(Homepage);
+        }}
       >
         Logout
       </button>
