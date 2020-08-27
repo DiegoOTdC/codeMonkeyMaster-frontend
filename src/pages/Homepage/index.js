@@ -50,8 +50,12 @@ export default function Homepage() {
 
       {data.map((exercise) => {
         return (
-          <Link className="hpLink" to={`/exercise/${exercise.id}`}>
-            <Card className="hpCard" key={exercise.id}>
+          <Link
+            className="hpLink"
+            key={exercise.id}
+            to={`/exercise/${exercise.id}`}
+          >
+            <Card className="hpCard">
               <Card.Body className="homeCard">
                 <b className="cardTitle">{exercise.name}</b>
                 <br />
