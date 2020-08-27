@@ -11,7 +11,7 @@ import QuizCode from "../../components/QuizCode";
 export default function Exercise() {
   const param = useParams();
   console.log("param", param);
-  const exerciseId = param.id;
+  const exerciseId = parseInt(param.id);
   console.log("ex id test", exerciseId);
   const dispatch = useDispatch();
   const allCurrentExercises = useSelector(selectExercise);
