@@ -15,6 +15,7 @@ export default function Exercise() {
   const allCurrentExercises = useSelector(selectExercise);
   const completedExercises = useSelector(selectCompletedExercises);
   const [currentExercise, setCurrentExercise] = useState("");
+  console.log("all ex", allCurrentExercises);
 
   useEffect(() => {
     completedExercises.forEach((item) => {
@@ -40,7 +41,7 @@ export default function Exercise() {
     dispatch(getCompletedExercises());
     dispatch(getExerciseById(exerciseId));
   }, [dispatch, exerciseId]);
-  // console.log("current exercise", currentExercise)
+  console.log("current exercise", currentExercise);
 
   const questionFormat = () => {
     if (currentExercise && currentExercise.level === "level 1") {
@@ -49,6 +50,7 @@ export default function Exercise() {
       return <QuizCode exercise={currentExercise} />;
     } else {
       //return some loading indicator would be better
+      console.log("test");
       return null;
     }
   };
