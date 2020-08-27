@@ -17,14 +17,14 @@ export default function Welcome() {
           You will start as a code monkey but if you complete all the exercises
           you can become the ultimate code master!
         </p>
-          <p>
-            <br />
-            <b>
-              <Link to="/signup">
-                <button className="welcomeButton">Register</button>
-              </Link>{" "}
-              for free and start your code challenge now!
-            </b>
+        <p>
+          <br />
+          <b>
+            <Link to="/signup">
+              <button className="welcomeButton">Sign up</button>
+            </Link>{" "}
+            for free and start your code challenge now!
+          </b>
         </p>
       </div>
     </>
