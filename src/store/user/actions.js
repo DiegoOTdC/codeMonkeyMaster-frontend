@@ -158,6 +158,9 @@ export const updateCompletedExercise = (exerciseId, quizId, timeTaken, exp) => {
       );
 
       if (response.status === 202) {
+        console.log(response);
+        console.log(response.data.completed);
+        dispatch(getCompletedExercisesSuccess([response.data.completed]));
         dispatch(appDoneLoading());
       }
     } catch (error) {
@@ -186,6 +189,10 @@ export function sendCompletedQuiz(exerciseId, quizId) {
       );
       console.log("updated info test", infoUpdated.data.user);
 
+      console.log(
+        "level 1 111111111111111111 completedquize",
+        infoUpdated.data.completedQuiz
+      );
       dispatch(getCompletedExercisesSuccess(infoUpdated.data.completedQuiz));
       dispatch(tokenStillValid(infoUpdated.data.user));
     } catch (error) {

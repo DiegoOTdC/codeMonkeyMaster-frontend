@@ -17,6 +17,7 @@ export default function Exercise() {
   const allCurrentExercises = useSelector(selectExercise);
   const completedExercises = useSelector(selectCompletedExercises);
   const [currentExercise, setCurrentExercise] = useState("");
+  const [finish, setFinish] = useState(false);
   console.log("all ex", allCurrentExercises);
   console.log("completedExercise", completedExercises);
 
@@ -55,8 +56,7 @@ export default function Exercise() {
     console.log("leftoverrrr", leftOverExercises);
 
     if (leftOverExercises.length === 0) {
-      console.log("we finished!");
-      console.log("leftover?", leftOverExercises);
+      setFinish(true);
     }
 
     // function getCorrectExercise(arr1, arr2) {
@@ -162,5 +162,5 @@ export default function Exercise() {
     }
   };
 
-  return <div>{questionFormat()}</div>;
+  return <div>{!finish ? questionFormat() : "You are finished!"}</div>;
 }
