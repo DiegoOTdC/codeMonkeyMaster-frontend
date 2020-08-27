@@ -6,14 +6,18 @@ import {
 } from "../../store/exercise/actions";
 import { removeCompletedExercises } from "../../store/user/actions";
 import { selectMethod } from "../../store/exercise/selectors";
+import { selectUser } from "../../store/user/selectors"
 import "./homepage.css";
+import Progressbar from "../../components/Progressbar"
 
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { ProgressBar } from "react-bootstrap";
 
 export default function Homepage() {
   const dispatch = useDispatch();
   const exercises = useSelector(selectMethod);
+  const user = useSelector(selectUser)
   const [searchTerm, setSearchTerm] = useState();
   const [searchResults, setSearchResults] = useState([]);
 
@@ -47,6 +51,7 @@ export default function Homepage() {
 
   return (
     <div>
+      <Progressbar userData={user} /> 
       <h3 className="hpTitle">Exercises</h3>
       <input
         className="searchBar"

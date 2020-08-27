@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router"
 import { updateCompletedExercise } from "../../store/user/actions";
 import { selectUser } from "../../store/user/selectors"
+import { sendCompletedQuiz } from "../../store/user/actions"
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
@@ -9,6 +11,7 @@ import "codemirror/theme/material.css";
 import Progressbar from "../Progressbar";
 
 export default function QuizCode(props) {
+  const history = useHistory();
   const user = useSelector(selectUser)
   const { exercise } = props;
   const { answer, question, exerciseId, id } = exercise;
@@ -54,6 +57,7 @@ export default function QuizCode(props) {
         text: "Long live the master! - This answer is correct!",
       });
       setFinish(`${hours}:${minutes}:${seconds}`);
+      console.log("time", finish)
     }
   }
 
@@ -120,6 +124,7 @@ export default function QuizCode(props) {
       dispatch(
         updateCompletedExercise(exerciseId, id, finalTime(), experience())
       );
+      history.push("/homepage")
   }, [dispatch, exerciseId, id, start, finish]);
 
   return (
