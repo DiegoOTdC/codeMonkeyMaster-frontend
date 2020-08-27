@@ -168,3 +168,23 @@ export const updateCompletedExercise = (exerciseId, quizId, timeTaken, exp) => {
     }
   };
 };
+
+export function sendCompletedQuiz(exerciseId, quizId){
+  return async(dispatch, getState) => {
+    const tokenNeeded = getState().user.token
+    try{
+      const infoUpdated = await axios.patch(`${apiUrl}/exercises/${exerciseId}/quiz/completed/${quizId}`,{},{
+        headers: {
+          Authorization: `Bearer ${tokenNeeded}`
+        }
+      })
+      console.log("updated info test", infoUpdated.data.user)
+
+      dispatch(getCompletedExercisesSuccess(infoUpdated.data.completedQuiz))
+      dispatch(tokenStillValid(infoUpdated.data.user))
+
+    } catch(error){
+      console.log(error.message)
+    }
+  }
+}

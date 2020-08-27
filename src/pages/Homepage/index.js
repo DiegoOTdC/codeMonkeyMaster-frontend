@@ -16,7 +16,7 @@ export default function Homepage() {
 
   useEffect(() => {
     dispatch(getExercises());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (!searchTerm) {
@@ -26,7 +26,6 @@ export default function Homepage() {
         exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setSearchResults(results);
-    }
   }, [searchTerm]);
 
   const handleChange = (event) => {

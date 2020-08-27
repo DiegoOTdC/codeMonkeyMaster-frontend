@@ -40,6 +40,7 @@ export default function Exercise() {
     dispatch(getCompletedExercises());
     dispatch(getExerciseById(exerciseId));
   }, [dispatch, exerciseId]);
+  // console.log("current exercise", currentExercise)
 
   const questionFormat = () => {
     if (currentExercise && currentExercise.level === "level 1") {
