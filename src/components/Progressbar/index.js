@@ -1,5 +1,5 @@
 import React from "react"
-import {ProgressBar, Container, Col, Row, Card} from "react-bootstrap"
+import {ProgressBar, Container, Col, Row, Card, Spinner} from "react-bootstrap"
 
 
 const expProgress = [
@@ -12,7 +12,7 @@ const expProgress = [
       total: 90,
     },
     {
-      rank: "Developer",
+      rank: "Code Wizard",
       total: 180,
     },
     {
