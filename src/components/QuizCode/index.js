@@ -16,6 +16,7 @@ import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/theme/material.css";
 import Progressbar from "../Progressbar";
+import "./index.css";
 
 export default function QuizCode(props) {
   const { exercise } = props;
@@ -160,16 +161,24 @@ export default function QuizCode(props) {
                     fontSize: 30,
                   }}
                 >
-                  {question}
+                  {start && question}
                 </span>
               </Card.Text>
-              <CodeMirror
-                value={code}
-                options={{ mode: "javascript", ...codeMirrorOptions }}
-                onBeforeChange={(editor, data, js) => {
-                  setCode(js);
-                }}
-              />
+              <br />
+              <div className="TopCodeMirror">
+                <CodeMirror
+                  value={
+                    code || start
+                      ? code
+                      : `console.log("Please press the hourglass to start the exercise! => Remember!! It's on time!")`
+                  }
+                  options={{ mode: "javascript", ...codeMirrorOptions }}
+                  onBeforeChange={(editor, data, js) => {
+                    setCode(js);
+                  }}
+                />
+              </div>
+              <br />
               {!start ? (
                 <Button
                   variant="outline-warning"

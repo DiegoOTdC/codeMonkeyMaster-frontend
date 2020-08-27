@@ -1,0 +1,7 @@
+.CodeMirror {
+  border: 1px solid #f0ad4e;
+  height: auto;
+}
+.CodeMirror-scroll {
+  min-height: 100px;
+}
