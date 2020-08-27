@@ -22,9 +22,9 @@ export default function QuizCode(props) {
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
 
-  useEffect(() => {
-    dispatch(getExerciseById(1));
-  }, [dispatch]);
+  //   useEffect(() => {
+  //     dispatch(getExerciseById(1));
+  //   }, [dispatch]);
 
   const codeMirrorOptions = {
     theme: "material",
@@ -115,6 +115,8 @@ export default function QuizCode(props) {
         return 10;
       }
     };
+
+    console.log("we get here?");
 
     finish &&
       dispatch(

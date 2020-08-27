@@ -7,6 +7,12 @@ export const GET_EXERCISE_SUCCESS = "GET_EXERCISE_SUCCESS";
 
 export const SET_QUIZ_QUESTIONS = "SET_QUIZ_QUESTIONS";
 
+export const REMOVE_QUIZ_QUESTIONS = "REMOVE_QUIZ_QUESTIONS";
+
+export const removeQuizQuestions = () => ({
+  type: REMOVE_QUIZ_QUESTIONS,
+});
+
 export const setQuizQuestions = (data) => {
   return {
     type: SET_QUIZ_QUESTIONS,

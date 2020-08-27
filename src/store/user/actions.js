@@ -14,6 +14,12 @@ export const LOG_OUT = "LOG_OUT";
 export const GET_COMPLETED_EXERCISES_SUCCESS =
   "GET_COMPLETED_EXERCISES_SUCCESS";
 
+export const REMOVE_COMPLETED_EXERCISES = "REMOVE_COMPLETED_EXERCISES";
+
+export const removeCompletedExercises = () => ({
+  type: REMOVE_COMPLETED_EXERCISES,
+});
+
 const loginSuccess = (userWithToken) => {
   return {
     type: LOGIN_SUCCESS,

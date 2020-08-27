@@ -38,10 +38,13 @@ export default function Exercise() {
     }
     const commonElements = getCommon(allCurrentExercises, completedExercises);
     console.log("the common", commonElements);
+    console.log("allcurrentexercises", allCurrentExercises);
     console.log("the completedexxercises", completedExercises);
 
     //Create a new array that has all exercises the user has not done yet (allCurrentExercises - commonElements) = leftOverExercises
     const leftOverExercises = allCurrentExercises.filter((el) => {
+      console.log("el", el);
+      console.log("commonElements", commonElements);
       return !commonElements.includes(el);
     });
     console.log("leftOverExercises", leftOverExercises);
@@ -55,7 +58,7 @@ export default function Exercise() {
     }
     console.log("leftoverrrr", leftOverExercises);
 
-    if (leftOverExercises.length === 0) {
+    if (leftOverExercises.length === 0 && commonElements.length !== 0) {
       setFinish(true);
     }
 
