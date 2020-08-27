@@ -39,12 +39,12 @@ const getCompletedExercisesSuccess = (completedExercises) => ({
 
 export const logOut = () => ({ type: LOG_OUT });
 
-export const signUp = (name, email, password) => {
+export const signUp = (fullName, email, password) => {
   return async (dispatch, getState) => {
     dispatch(appLoading());
     try {
       const response = await axios.post(`${apiUrl}/signup`, {
-        name,
+        fullName,
         email,
         password,
       });

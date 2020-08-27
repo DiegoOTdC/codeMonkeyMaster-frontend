@@ -1,17 +1,19 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { logOut } from "../../store/user/actions";
 import { selectUser } from "../../store/user/selectors";
 import Nav from "react-bootstrap/Nav";
-import Homepage from "../../pages/Homepage";
+import NavbarItem from "./NavbarItem";
 
 export default function LoggedIn() {
   const dispatch = useDispatch();
-  // const history = useHistory();
+  const history = useHistory();
   const user = useSelector(selectUser);
+
   return (
     <>
+      <NavbarItem path="/homepage" linkText="Home" />
       <Nav.Item style={{ padding: ".5rem 1rem" }}>{user.email}</Nav.Item>
       <button
         style={{
@@ -27,7 +29,7 @@ export default function LoggedIn() {
         }}
         onClick={() => {
           dispatch(logOut());
-          // history.push(Homepage);
+          history.push("/");
         }}
       >
         Logout
