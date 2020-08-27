@@ -3,7 +3,9 @@
 }
 
 .hintBody {
-  border: 1px solid black;
+  box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.2);
   background-color: rgb(241, 243, 146);
   color: black;
+  transform: scale(1.09);
+  transition: all 0.7s ease;
 }
