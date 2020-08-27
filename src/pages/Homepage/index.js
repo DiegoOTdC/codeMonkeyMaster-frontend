@@ -28,9 +28,6 @@ export default function Homepage() {
       setSearchResults(results);
     }
   }, [searchTerm]);
-  console.log("test", searchResults);
-  console.log("search", searchTerm);
-  console.log("exercises", exercises);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
