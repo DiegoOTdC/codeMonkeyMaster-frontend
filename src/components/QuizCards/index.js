@@ -18,7 +18,8 @@ import Progressbar from "../Progressbar";
 export default function QuizCards(props) {
   const history = useHistory();
   const dispatch = useDispatch();
-  const exerciseIdNeeded = parseInt(useParams().id);
+  const params = useParams();
+  const exerciseIdNeeded = parseInt(params.id);
   console.log("exercise Id test", exerciseIdNeeded);
   const [answered, set_Answered] = useState(0);
   const [review, set_Review] = useState("");

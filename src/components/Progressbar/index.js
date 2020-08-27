@@ -11,7 +11,7 @@ const expProgress = [
     total: 90,
   },
   {
-    rank: "Developer",
+    rank: "Code Wizard",
     total: 180,
   },
   {
