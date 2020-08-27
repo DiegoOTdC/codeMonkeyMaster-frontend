@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Loading from "./components/Loading";
 import MessageBox from "./components/MessageBox";
@@ -23,6 +23,15 @@ function App() {
     dispatch(getUserWithStoredToken());
   }, [dispatch]);
 
+  const protectedRoutes = (Component, routerProps) => {
+    const isAuthenticated = localStorage.getItem("token");
+    return isAuthenticated ? (
+      <Component {...routerProps} />
+    ) : (
+      <Redirect to="/login" />
+    );
+  };
+
   return (
     <div className="App">
       <Navigation />
@@ -30,10 +39,16 @@ function App() {
       {isLoading ? <Loading /> : null}
       <Switch>
         <Route exact path="/" component={Welcome} />
-        <Route path="/homepage" component={Homepage} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
-        <Route path="/exercise/:id" component={Exercise} />
+        <Route
+          path="/homepage"
+          render={(routerProps) => protectedRoutes(Homepage, routerProps)}
+        />
+        <Route
+          path="/exercise/:id"
+          render={(routerProps) => protectedRoutes(Exercise, routerProps)}
+        />
       </Switch>
     </div>
   );

@@ -10,7 +10,6 @@ import LoggedOut from "./LoggedOut";
 
 export default function Navigation() {
   const token = useSelector(selectToken);
-
   const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
 
   return (
@@ -25,7 +24,6 @@ export default function Navigation() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav style={{ width: "100%" }} fill>
           <NavbarItem path="/homepage" linkText="Home" />
-          <NavbarItem path="/other" linkText="Other" />
           {loginLogoutControls}
         </Nav>
       </Navbar.Collapse>
