@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import { Card, Button, Form, Container, Row, Col, Spinner } from "react-bootstrap"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useParams, useHistory } from "react-router"
 
+import { selectUser } from "../../store/user/selectors"
 import { sendCompletedQuiz } from "../../store/user/actions"
+import Progressbar from "../Progressbar"
 
 export default function QuizCards(props){
     const history = useHistory()
@@ -17,6 +19,8 @@ export default function QuizCards(props){
     console.log("shuffle test", shuffle)
     const quizQuestions = props.exercise
     // console.log("quiz question check", quizQuestions)
+    const userNeeded = useSelector(selectUser)
+    console.log("here is the user", userNeeded)
 
     if(quizQuestions === undefined){
         return <Spinner animation="border" variant="warning" />
@@ -161,6 +165,7 @@ export default function QuizCards(props){
                 }}>
                 <Card.Body>
                     <Card.Title>
+                        <Progressbar userData={userNeeded} />
                         Level 1: Quiz Questions
                     </Card.Title>
                     <Card.Text>

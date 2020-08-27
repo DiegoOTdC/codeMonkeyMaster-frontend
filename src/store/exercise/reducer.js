@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
     case SET_QUIZ_QUESTIONS:
       return {
         ...state,
-        questions: [...state.questions, ...action.payload],
+        questions: [...action.payload],
       };
     case GET_EXERCISE_SUCCESS:
       return {
