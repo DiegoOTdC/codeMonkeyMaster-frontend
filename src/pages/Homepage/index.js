@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 export default function Homepage() {
   const dispatch = useDispatch();
   const exercises = useSelector(selectMethod);
-
   const [searchTerm, setSearchTerm] = useState();
   const [searchResults, setSearchResults] = useState([]);
 

@@ -17,14 +17,10 @@ export default function QuizCards(props) {
   const history = useHistory();
   const dispatch = useDispatch();
   const exerciseIdNeeded = parseInt(useParams().id);
-  console.log("exercise Id test", exerciseIdNeeded);
-  const [answered, set_Answered] = useState(0); // remove?
+  const [answered, set_Answered] = useState(0);
   const [review, set_Review] = useState("");
-  // console.log("review test", review)
   const [shuffle, set_Shuffle] = useState(Math.floor(Math.random() * 10 + 1));
-  console.log("shuffle test", shuffle);
   const quizQuestions = props.exercise;
-  // console.log("quiz question check", quizQuestions)
 
   if (quizQuestions === undefined) {
     return <Spinner animation="border" variant="warning" />;
@@ -41,15 +37,8 @@ export default function QuizCards(props) {
       return "warning";
     }
   }
-  console.log("variant test", correctOrNot());
-
-  // if(answered === 2){
-  //     history.push("/homepage")
-  // }
-  console.log("answered test", answered);
 
   function randomAnswers(randomNum) {
-    // console.log("randome number test", randomNum)
     if (randomNum <= 2.5) {
       return (
         <Form>

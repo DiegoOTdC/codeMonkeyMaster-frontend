@@ -67,8 +67,6 @@ export const signUp = (name, email, password) => {
 
 export const login = (email, password) => {
   return async (dispatch, getState) => {
-    console.log("email", email);
-    console.log("passwrod", password);
     dispatch(appLoading());
     try {
       const response = await axios.post(`${apiUrl}/login`, {
@@ -136,8 +134,6 @@ export const getCompletedExercises = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      console.log("getCompletedExercises response", response.data);
-
       dispatch(getCompletedExercisesSuccess(response.data.exercisesCompleted));
       dispatch(appDoneLoading());
     } catch (error) {
@@ -164,8 +160,6 @@ export const updateCompletedExercise = (exerciseId, quizId, timeTaken, exp) => {
       );
 
       if (response.status === 202) {
-        console.log(response);
-        console.log(response.data.completed);
         dispatch(getCompletedExercisesSuccess([response.data.completed]));
         dispatch(appDoneLoading());
       }
@@ -192,12 +186,6 @@ export function sendCompletedQuiz(exerciseId, quizId) {
             Authorization: `Bearer ${tokenNeeded}`,
           },
         }
-      );
-      console.log("updated info test", infoUpdated.data.user);
-
-      console.log(
-        "level 1 111111111111111111 completedquize",
-        infoUpdated.data.completedQuiz
       );
       dispatch(getCompletedExercisesSuccess(infoUpdated.data.completedQuiz));
       dispatch(tokenStillValid(infoUpdated.data.user));

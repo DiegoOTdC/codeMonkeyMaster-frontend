@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getExerciseById } from "../../store/exercise/actions";
 import { updateCompletedExercise } from "../../store/user/actions";
-
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
@@ -21,10 +19,6 @@ export default function QuizCode(props) {
   const hours = date.getHours();
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
-
-  //   useEffect(() => {
-  //     dispatch(getExerciseById(1));
-  //   }, [dispatch]);
 
   const codeMirrorOptions = {
     theme: "material",
