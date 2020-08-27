@@ -113,8 +113,13 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 "For me this was my first project working as a (remote) team. This is something that can be pretty challenging, but I have to say that this went really well with our team. The communication between us was very clear and everybody worked hard, so I learned that **I enjoy to work in a team**. 
 Using **Git branches** was also a new thing for me. This project was perfect to experiment with that and in the end it worked out great. In this project I also took a bit more time for the styling part by trying out some small **animations**."
 
-[Darian](https://github.com/DarianRushworth):   
-""
+[Darian](https://github.com/DarianRushworth):
+**Overview:**
+"Looking back at this week, I really cant explain how great I feel. The overall experience throughout has been amazing, I have learnt alot about listening, understanding, giving feedback and planning as a team. We came into a few problems along the way into making this masterpiece, but someone was always around to lend a hand/ear/eye anything we could do to help. 
+
+**Things I found challenging:**
+Throughout the project I have learnt so much from both **Diego** and **Stephanie** about new methods and intergrating them into your work. At the beginning I found it a bit challenging understanding there "style" of coding which I am sure it is the same when they read mine, through the week the understanding only got easier and now I feel like we are a **WELL OILED MACHINE**.
+I had the most fun with developing the progressbar for the user to level up as they complete more and more quiz questions for exp. [Progress Component](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/blob/development/src/components/Progressbar/index.js) this the frontend rendering. Routes also had to be changed to updated the user ranking and total exp.
 
 [Diégo](https://github.com/DiegoOTdC):   
 "First off I want to say, the cooperation between us went really smoothly, it was really nice to work together on this project! I think everyone right away knew what they wanted to do and if we were stuck or just needed to figure out the next step, the communication was always open and great for that. If there were mistakes or things needed to change, we all handled the feedback great I think. 
