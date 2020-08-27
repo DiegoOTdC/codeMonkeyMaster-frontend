@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export default function Timer(props) {
-  const { timer, finish } = props;
+  const { timer } = props;
   console.log("this is the props", props);
   const [seconds, set_Seconds] = useState(0);
   const [minutes, set_Minutes] = useState(0);
@@ -37,7 +37,7 @@ export default function Timer(props) {
     }:${seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00"}`
   );
   return (
-    <div style={{ color: "#f0ad4e" }}>{`${
+    <div style={{ color: "#f0ad4e", fontSize: 25 }}>{`${
       hours ? (hours > 9 ? hours : "0" + hours) : "00"
     }:${minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00"}:${
       seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00"

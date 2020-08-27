@@ -157,10 +157,25 @@ export default function QuizCode(props) {
             <Card.Body>
               {" "}
               <Card.Title>
-                <Progressbar userData={userNeeded} />
+                <Row>
+                  <div style={{ display: "inline-block" }}>
+                    <Progressbar userData={userNeeded} />
+                  </div>
+                  {start ? (
+                    <div
+                      style={{
+                        display: "inline-block",
+                        marginLeft: "auto",
+                        marginRight: "5%",
+                        marginTop: "1em",
+                      }}
+                    >
+                      <Timer timer={timer} finish={finish} />
+                    </div>
+                  ) : null}
+                </Row>
                 Level 1: Quiz Questions
               </Card.Title>
-              <Timer timer={timer} finish={finish} />
               <Card.Text>
                 <span
                   style={{
