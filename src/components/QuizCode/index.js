@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import {
+  Card,
+  Button,
+  Form,
+  Container,
+  Row,
+  Col,
+  Spinner,
+} from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "../../store/user/selectors";
 import { updateCompletedExercise } from "../../store/user/actions";
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/theme/material.css";
+// import Progressbar from "../Progressbar";
 
 export default function QuizCode(props) {
   const { exercise } = props;
@@ -14,6 +25,9 @@ export default function QuizCode(props) {
   const [message, setMessage] = useState("");
   const [start, setStart] = useState("");
   const [finish, setFinish] = useState("");
+
+  const [review, set_Review] = useState("");
+  const userNeeded = useSelector(selectUser);
 
   const date = new Date();
   const hours = date.getHours();
@@ -143,5 +157,67 @@ export default function QuizCode(props) {
         <button onClick={() => finishExercise()}>Finish</button>
       )}
     </div>
+  );
+
+  function correctOrNot() {
+    if (review === "") {
+      return "info";
+    } else if (review === "incorrect") {
+      return "danger";
+    } else if (review === "correct") {
+      return "success";
+    } else {
+      return "warning";
+    }
+  }
+
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <Card
+            bg={correctOrNot()}
+            style={{
+              width: "60rem",
+              height: "30rem",
+            }}
+          >
+            <Card.Body>
+              {" "}
+              <Card.Title>
+                {/* <Progressbar userData={userNeeded} /> */}
+                Level 1: Quiz Questions
+              </Card.Title>
+              <Card.Text>
+                <span
+                  style={{
+                    fontSize: 30,
+                  }}
+                >
+                  {question}
+                </span>
+              </Card.Text>
+              <CodeMirror
+                value={code}
+                options={{ mode: "javascript", ...codeMirrorOptions }}
+                onBeforeChange={(editor, data, js) => {
+                  setCode(js);
+                }}
+              />{" "}
+              <Button
+                variant="outline-warning"
+                onClick={() => {
+                  startExercise();
+                }}
+              >
+                <span role="img" aria-label="banana">
+                  🍌
+                </span>
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
