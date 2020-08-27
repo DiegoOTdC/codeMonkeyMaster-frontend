@@ -26,11 +26,7 @@ export default function Homepage() {
         exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setSearchResults(results);
-    }
-  }, [searchTerm, exercises]);
-  // console.log("test", searchResults);
-  // console.log("search", searchTerm);
-  // console.log("exercises", exercises);
+  }, [searchTerm]);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
