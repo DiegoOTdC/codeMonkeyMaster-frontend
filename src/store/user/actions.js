@@ -130,6 +130,8 @@ export const getCompletedExercises = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
 
+      console.log("getCompletedExercises response", response.data);
+
       dispatch(getCompletedExercisesSuccess(response.data.exercisesCompleted));
       dispatch(appDoneLoading());
     } catch (error) {
