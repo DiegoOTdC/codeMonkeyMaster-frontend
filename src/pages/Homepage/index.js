@@ -15,7 +15,9 @@ export default function Homepage() {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    dispatch(getExercises());
+    if (exercises.length === 0) {
+      dispatch(getExercises());
+    }
   }, []);
 
   useEffect(() => {
@@ -48,16 +50,16 @@ export default function Homepage() {
 
       {data.map((exercise) => {
         return (
-          <Card className="hpCard" key={exercise.id}>
-            <Card.Body className="homeCard">
-              <Link className="hpLink" to={`/exercise/${exercise.id}`}>
+          <Link className="hpLink" to={`/exercise/${exercise.id}`}>
+            <Card className="hpCard" key={exercise.id}>
+              <Card.Body className="homeCard">
                 <b className="cardTitle">{exercise.name}</b>
-              </Link>
-              <br />
-              Exercises: <br />
-              MonkeyMaster:
-            </Card.Body>
-          </Card>
+                <br />
+                Exercises: 3 <br />
+                MonkeyMaster:
+              </Card.Body>
+            </Card>
+          </Link>
         );
       })}
       <Card className="hpCard">
