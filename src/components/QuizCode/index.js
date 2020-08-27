@@ -18,6 +18,8 @@ import "codemirror/theme/material.css";
 import Progressbar from "../Progressbar";
 import "./index.css";
 
+import Timer from "../Timer";
+
 export default function QuizCode(props) {
   const { exercise } = props;
   const { answer, question, exerciseId, id } = exercise;
@@ -155,6 +157,7 @@ export default function QuizCode(props) {
                 <Progressbar userData={userNeeded} />
                 Level 1: Quiz Questions
               </Card.Title>
+              <Timer />
               <Card.Text>
                 <span
                   style={{
