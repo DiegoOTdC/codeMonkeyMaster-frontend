@@ -15,14 +15,13 @@ import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/theme/material.css";
-// import Progressbar from "../Progressbar";
+import Progressbar from "../Progressbar";
 
 export default function QuizCode(props) {
   const { exercise } = props;
   const { answer, question, exerciseId, id } = exercise;
   const dispatch = useDispatch();
   const [code, setCode] = useState("");
-  const [message, setMessage] = useState("");
   const [start, setStart] = useState("");
   const [finish, setFinish] = useState("");
 
@@ -53,16 +52,13 @@ export default function QuizCode(props) {
   function finishExercise() {
     const result = equal(answer, code);
     if (!result) {
-      setMessage({
-        backgroundColor: "red",
-        text: "oeh-oeh-ahh-ahh monkey want banana? - This answer is incorrect!",
-      });
+      set_Review("incorrect");
+      setTimeout(() => {
+        set_Review("");
+      }, 1500);
     }
     if (result) {
-      setMessage({
-        backgroundColor: "green",
-        text: "Long live the master! - This answer is correct!",
-      });
+      set_Review("correct");
       setFinish(`${hours}:${minutes}:${seconds}`);
     }
   }
@@ -124,40 +120,11 @@ export default function QuizCode(props) {
       }
     };
 
-    console.log("we get here?");
-
     finish &&
       dispatch(
         updateCompletedExercise(exerciseId, id, finalTime(), experience())
       );
   }, [dispatch, exerciseId, id, start, finish]);
-
-  return (
-    <div style={{ margin: "auto", width: "75%", backgroundColor: "grey" }}>
-      {start && <h1>{question}</h1>}
-      <CodeMirror
-        value={code}
-        options={{ mode: "javascript", ...codeMirrorOptions }}
-        onBeforeChange={(editor, data, js) => {
-          setCode(js);
-        }}
-      />
-
-      {message && (
-        <p
-          style={{ backgroundColor: message.backgroundColor, color: "yellow" }}
-        >
-          {message.text}
-        </p>
-      )}
-
-      {!start ? (
-        <button onClick={() => startExercise()}>Start</button>
-      ) : (
-        <button onClick={() => finishExercise()}>Finish</button>
-      )}
-    </div>
-  );
 
   function correctOrNot() {
     if (review === "") {
@@ -179,13 +146,12 @@ export default function QuizCode(props) {
             bg={correctOrNot()}
             style={{
               width: "60rem",
-              height: "30rem",
             }}
           >
             <Card.Body>
               {" "}
               <Card.Title>
-                {/* <Progressbar userData={userNeeded} /> */}
+                <Progressbar userData={userNeeded} />
                 Level 1: Quiz Questions
               </Card.Title>
               <Card.Text>
@@ -203,17 +169,30 @@ export default function QuizCode(props) {
                 onBeforeChange={(editor, data, js) => {
                   setCode(js);
                 }}
-              />{" "}
-              <Button
-                variant="outline-warning"
-                onClick={() => {
-                  startExercise();
-                }}
-              >
-                <span role="img" aria-label="banana">
-                  🍌
-                </span>
-              </Button>
+              />
+              {!start ? (
+                <Button
+                  variant="outline-warning"
+                  onClick={() => {
+                    startExercise();
+                  }}
+                >
+                  <span role="img" aria-label="hourglass">
+                    &#8987;
+                  </span>
+                </Button>
+              ) : (
+                <Button
+                  variant="outline-warning"
+                  onClick={() => {
+                    finishExercise();
+                  }}
+                >
+                  <span role="img" aria-label="hourglass">
+                    &#9203;
+                  </span>
+                </Button>
+              )}
             </Card.Body>
           </Card>
         </Col>
