@@ -1,3 +1,4 @@
+
 import React, { useState } from "react"
 import { Card, Button, Form, Container, Row, Col, Spinner } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
@@ -22,136 +23,161 @@ export default function QuizCards(props){
     const userNeeded = useSelector(selectUser)
     console.log("here is the user", userNeeded)
 
-    if(quizQuestions === undefined){
-        return <Spinner animation="border" variant="warning" />
-    }
+  if (quizQuestions === undefined) {
+    return <Spinner animation="border" variant="warning" />;
+  }
 
-    function correctOrNot(){
-        if(review === ""){
-             return "info"
-        } else if(review === "incorrect"){
-            return "danger"
-        } else if(review === "correct"){
-            return "success"
-        } else {
-            return "warning"
-        }
+  function correctOrNot() {
+    if (review === "") {
+      return "info";
+    } else if (review === "incorrect") {
+      return "danger";
+    } else if (review === "correct") {
+      return "success";
+    } else {
+      return "warning";
     }
-    console.log("variant test", correctOrNot())
+  }
 
-    if(answered === 2){
-        history.push("/homepage")
+  function randomAnswers(randomNum) {
+    if (randomNum <= 2.5) {
+      return (
+        <Form>
+          <Form.Group controlId="ControlSelect">
+            <Form.Label>Possible Solutions:</Form.Label>
+            <Form.Control as="select" multiple>
+              <option
+                value="correct"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                1) {quizQuestions.answer}
+              </option>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                2) {quizQuestions.incorrect1}
+              </option>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                3) {quizQuestions.incorrect2}
+              </option>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                4) {quizQuestions.incorrect3}
+              </option>
+            </Form.Control>
+          </Form.Group>
+        </Form>
+      );
+    } else if (2.5 <= randomNum && randomNum <= 5) {
+      return (
+        <Form>
+          <Form.Group controlId="ControlSelect">
+            <Form.Label>Possible Solutions:</Form.Label>
+            <Form.Control as="select" multiple>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                1) {quizQuestions.incorrect1}
+              </option>
+              <option
+                value="correct"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                2) {quizQuestions.answer}
+              </option>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                3) {quizQuestions.incorrect2}
+              </option>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                4) {quizQuestions.incorrect3}
+              </option>
+            </Form.Control>
+          </Form.Group>
+        </Form>
+      );
+    } else if (5 <= randomNum && randomNum <= 7.5) {
+      return (
+        <Form>
+          <Form.Group controlId="ControlSelect">
+            <Form.Label>Possible Solutions:</Form.Label>
+            <Form.Control as="select" multiple>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                1) {quizQuestions.incorrect1}
+              </option>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                2) {quizQuestions.incorrect2}
+              </option>
+              <option
+                value="correct"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                3) {quizQuestions.answer}
+              </option>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                4) {quizQuestions.incorrect3}
+              </option>
+            </Form.Control>
+          </Form.Group>
+        </Form>
+      );
+    } else {
+      return (
+        <Form>
+          <Form.Group controlId="ControlSelect">
+            <Form.Label>Possible Solutions:</Form.Label>
+            <Form.Control as="select" multiple>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                1) {quizQuestions.incorrect1}
+              </option>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                2) {quizQuestions.incorrect2}
+              </option>
+              <option
+                value="incorrect"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                3) {quizQuestions.incorrect3}
+              </option>
+              <option
+                value="correct"
+                onClick={(event) => set_Review(event.target.value)}
+              >
+                4) {quizQuestions.answer}
+              </option>
+            </Form.Control>
+          </Form.Group>
+        </Form>
+      );
     }
-    console.log("answered test", answered)
-
-    function randomAnswers(randomNum){
-        // console.log("randome number test", randomNum)
-            if(randomNum <= 2.5){
-                return (
-                    <Form>
-                        <Form.Group controlId="ControlSelect">
-                            <Form.Label>
-                                Possible Solutions:
-                            </Form.Label>
-                            <Form.Control
-                                as="select"
-                                multiple>
-                                <option
-                                    value="correct"
-                                    onClick={(event) => set_Review(event.target.value)}>1) {quizQuestions.answer}</option>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>2) {quizQuestions.incorrect1}</option>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>3) {quizQuestions.incorrect2}</option>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>4) {quizQuestions.incorrect3}</option>
-                            </Form.Control>
-                        </Form.Group>
-                    </Form>
-                )
-            } else if(2.5 <= randomNum && randomNum <= 5){
-                return (
-                    <Form>
-                        <Form.Group controlId="ControlSelect">
-                            <Form.Label>
-                                Possible Solutions:
-                            </Form.Label>
-                            <Form.Control
-                                as="select"
-                                multiple>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>1) {quizQuestions.incorrect1}</option>
-                                <option
-                                    value="correct"
-                                    onClick={(event) => set_Review(event.target.value)}>2) {quizQuestions.answer}</option>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>3) {quizQuestions.incorrect2}</option>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>4) {quizQuestions.incorrect3}</option>
-                            </Form.Control>
-                        </Form.Group>
-                    </Form>
-                )
-            } else if(5 <= randomNum&& randomNum <=7.5){
-                return (
-                    <Form>
-                        <Form.Group controlId="ControlSelect">
-                            <Form.Label>
-                                Possible Solutions:
-                            </Form.Label>
-                            <Form.Control
-                                as="select"
-                                multiple>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>1) {quizQuestions.incorrect1}</option>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>2) {quizQuestions.incorrect2}</option>
-                                <option
-                                    value="correct"
-                                    onClick={(event) => set_Review(event.target.value)}>3) {quizQuestions.answer}</option>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>4) {quizQuestions.incorrect3}</option>
-                            </Form.Control>
-                        </Form.Group>
-                    </Form>
-                )
-            } else {
-                return (
-                    <Form>
-                        <Form.Group controlId="ControlSelect">
-                            <Form.Label>
-                                Possible Solutions:
-                            </Form.Label>
-                            <Form.Control
-                                as="select"
-                                multiple>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>1) {quizQuestions.incorrect1}</option>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>2) {quizQuestions.incorrect2}</option>
-                                <option
-                                    value="incorrect"
-                                    onClick={(event) => set_Review(event.target.value)}>3) {quizQuestions.incorrect3}</option>
-                                 <option
-                                    value="correct"
-                                    onClick={(event) => set_Review(event.target.value)}>4) {quizQuestions.answer}</option>
-                            </Form.Control>
-                        </Form.Group>
-                    </Form>
-                )
-            }
-        }    
+  }
     
     return (
         <Container>
@@ -194,3 +220,4 @@ export default function QuizCards(props){
         </Container>
     )
 }
+

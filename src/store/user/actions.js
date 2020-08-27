@@ -14,6 +14,12 @@ export const LOG_OUT = "LOG_OUT";
 export const GET_COMPLETED_EXERCISES_SUCCESS =
   "GET_COMPLETED_EXERCISES_SUCCESS";
 
+export const REMOVE_COMPLETED_EXERCISES = "REMOVE_COMPLETED_EXERCISES";
+
+export const removeCompletedExercises = () => ({
+  type: REMOVE_COMPLETED_EXERCISES,
+});
+
 const loginSuccess = (userWithToken) => {
   return {
     type: LOGIN_SUCCESS,
@@ -61,8 +67,6 @@ export const signUp = (fullName, email, password) => {
 
 export const login = (email, password) => {
   return async (dispatch, getState) => {
-    console.log("email", email);
-    console.log("passwrod", password);
     dispatch(appLoading());
     try {
       const response = await axios.post(`${apiUrl}/login`, {
@@ -156,6 +160,7 @@ export const updateCompletedExercise = (exerciseId, quizId, timeTaken, exp) => {
       );
 
       if (response.status === 202) {
+        dispatch(getCompletedExercisesSuccess([response.data.completed]));
         dispatch(appDoneLoading());
       }
     } catch (error) {
@@ -182,8 +187,6 @@ export function sendCompletedQuiz(exerciseId, quizId) {
           },
         }
       );
-      console.log("updated info test", infoUpdated.data.user);
-
       dispatch(getCompletedExercisesSuccess(infoUpdated.data.completedQuiz));
       dispatch(tokenStillValid(infoUpdated.data.user));
     } catch (error) {

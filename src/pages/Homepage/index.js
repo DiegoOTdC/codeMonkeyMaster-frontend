@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getExercises } from "../../store/exercise/actions";
+import {
+  getExercises,
+  removeQuizQuestions,
+} from "../../store/exercise/actions";
+import { removeCompletedExercises } from "../../store/user/actions";
 import { selectMethod } from "../../store/exercise/selectors";
 import "./homepage.css";
 
@@ -10,9 +14,13 @@ import { Link } from "react-router-dom";
 export default function Homepage() {
   const dispatch = useDispatch();
   const exercises = useSelector(selectMethod);
-
   const [searchTerm, setSearchTerm] = useState();
   const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    dispatch(removeCompletedExercises());
+    dispatch(removeQuizQuestions());
+  }, []);
 
   useEffect(() => {
     if (exercises.length === 0) {

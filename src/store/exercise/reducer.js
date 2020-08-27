@@ -1,4 +1,8 @@
-import { GET_EXERCISE_SUCCESS, SET_QUIZ_QUESTIONS } from "./actions";
+import {
+  GET_EXERCISE_SUCCESS,
+  SET_QUIZ_QUESTIONS,
+  REMOVE_QUIZ_QUESTIONS,
+} from "./actions";
 
 const initialState = {
   exercises: [],
@@ -10,6 +14,9 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case REMOVE_QUIZ_QUESTIONS:
+      return { ...state, questions: [] };
+
     case SET_QUIZ_QUESTIONS:
       return {
         ...state,
