@@ -27,6 +27,7 @@ export default function QuizCode(props) {
   const [code, setCode] = useState("");
   const [start, setStart] = useState("");
   const [finish, setFinish] = useState("");
+  const [timer, setTimer] = useState(false);
 
   const [review, set_Review] = useState("");
   const userNeeded = useSelector(selectUser);
@@ -50,6 +51,7 @@ export default function QuizCode(props) {
 
   function startExercise() {
     setStart(`${hours}:${minutes}:${seconds}`);
+    setTimer(true);
   }
 
   function finishExercise() {
@@ -62,6 +64,7 @@ export default function QuizCode(props) {
     }
     if (result) {
       set_Review("correct");
+      setTimer(false);
       setFinish(`${hours}:${minutes}:${seconds}`);
     }
   }
@@ -157,7 +160,7 @@ export default function QuizCode(props) {
                 <Progressbar userData={userNeeded} />
                 Level 1: Quiz Questions
               </Card.Title>
-              <Timer />
+              <Timer timer={timer} finish={finish} />
               <Card.Text>
                 <span
                   style={{
