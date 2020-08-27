@@ -79,6 +79,9 @@ export default function Homepage() {
           </Link>
         );
       })}
+      <Link
+        className="hpLink"
+        to="/exercise/random">
       <Card className="hpCard">
         <Card.Body className="homeCard">
           <b>Random</b>
@@ -87,6 +90,7 @@ export default function Homepage() {
           MonkeyMaster:
         </Card.Body>
       </Card>
+      </Link>
     </div>
   );
 }

@@ -40,6 +40,34 @@ export const getExercises = () => {
   };
 };
 
+export const getRandomQuestions = () => {
+  return async (dispatch, getState) => {
+    const tokenNeeded = getState().user.token;
+    if (tokenNeeded === null) return;
+
+    dispatch(appDoneLoading());
+    try{
+      const questions = await axios.get(`${apiUrl}/exercises/quiz/list`,{
+        headers: {
+          Authorization: `Bearer ${tokenNeeded}`
+        }
+      })
+      dispatch(setQuizQuestions(questions.data))
+
+      dispatch(appDoneLoading());
+    } catch(error){
+      if (error.response) {
+        console.log(error.response.data.message);
+        dispatch(setMessage("danger", true, error.response.data.message));
+      } else {
+        console.log(error.message);
+        dispatch(setMessage("danger", true, error.message));
+      }
+      dispatch(appDoneLoading());
+    }
+  }
+}
+
 export const getExerciseById = (id) => {
   return async (dispatch, getState) => {
     const token = selectToken(getState());
