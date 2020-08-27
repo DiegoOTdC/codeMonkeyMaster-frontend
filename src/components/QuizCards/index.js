@@ -19,7 +19,6 @@ export default function QuizCards(props){
     // console.log("quiz question check", quizQuestions)
 
     if(quizQuestions === undefined){
-        set_Shuffle(Math.random()*10)
         return <Spinner animation="border" variant="warning" />
     }
 
@@ -170,10 +169,8 @@ export default function QuizCards(props){
                         }}>
                             {quizQuestions.question}
                         </span>
-                        <>
-                            {randomAnswers(shuffle)}
-                        </>
                     </Card.Text>
+                    {randomAnswers(shuffle)}
                     <Button 
                         variant="outline-warning"
                         onClick={() => {

@@ -4,6 +4,14 @@ import { appLoading, appDoneLoading, setMessage } from "../appState/actions";
 import { selectToken } from "../user/selectors";
 
 export const GET_EXERCISE_SUCCESS = "GET_EXERCISE_SUCCESS";
+export const SET_QUIZ_QUESTIONS = "SET_QUIZ_QUESTIONS";
+
+export const setQuizQuestions = (data) => {
+  return {
+    type: SET_QUIZ_QUESTIONS,
+    payload: data
+  }
+}
 
 export const getExerciseSuccess = (exercise) => {
   return {
@@ -37,7 +45,7 @@ export const getExerciseById = (id) => {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      dispatch(getExerciseSuccess(response.data));
+      dispatch(setQuizQuestions(response.data));
 
       dispatch(appDoneLoading());
     } catch (error) {
