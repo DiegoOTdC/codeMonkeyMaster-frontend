@@ -10,10 +10,13 @@ import {
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router";
-
+import Popup from "reactjs-popup";
 import { selectUser } from "../../store/user/selectors";
+import { selectExercise } from "../../store/exercise/selectors";
 import { sendCompletedQuiz } from "../../store/user/actions";
 import Progressbar from "../Progressbar";
+import Hint from "../Hint";
+import hint from "../Hint";
 
 export default function QuizCards(props) {
   const history = useHistory();
@@ -21,21 +24,37 @@ export default function QuizCards(props) {
   const [answered, set_Answered] = useState(0);
   const [review, set_Review] = useState("");
   const [color, set_Color] = useState("");
-  console.log("review test", review);
   const [shuffle, set_Shuffle] = useState(Math.floor(Math.random() * 10 + 1));
-  console.log("shuffle test", shuffle);
   const quizQuestions = props.exercise;
-  // console.log("quiz question check", quizQuestions)
   const params = useParams();
   const exerciseIdNeeded = parseInt(params.id);
-  console.log("ExerciseIDNEEDDED", exerciseIdNeeded);
-  console.log("exercise Id test", exerciseIdNeeded);
   const userNeeded = useSelector(selectUser);
-  console.log("here is the user", userNeeded);
+  const exercises = useSelector(selectExercise);
 
   if (quizQuestions === undefined) {
     return <Spinner animation="border" variant="warning" />;
   }
+
+  console.log("exer", exercises);
+  const hint = exercises.map((exer) => {
+    return exer.hint;
+  });
+
+  const PopupHint = () => (
+    <Popup
+      trigger={
+        <Button variant="outline-warning">
+          <span role="img" aria-label="hint">
+            💡
+          </span>{" "}
+          Hint
+        </Button>
+      }
+      position="right center"
+    >
+      <Hint hint={hint} />
+    </Popup>
+  );
 
   function correctOrNot() {
     if (color === "") {
@@ -217,13 +236,15 @@ export default function QuizCards(props) {
               {randomAnswers(shuffle)}
               <Button
                 variant="outline-warning"
-                onClick={(event) => set_Color(review)}
+                onClick={() => set_Color(review)}
               >
                 <span role="img" aria-label="banana">
                   🍌
                 </span>{" "}
                 Check answer
               </Button>
+
+              <PopupHint />
               <br />
               <Button
                 variant="outline-warning"
