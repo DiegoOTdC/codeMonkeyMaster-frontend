@@ -45,7 +45,7 @@ export const getRandomQuestions = () => {
     const tokenNeeded = getState().user.token;
     if (tokenNeeded === null) return;
 
-    dispatch(appDoneLoading());
+    dispatch(appLoading());
     try{
       const questions = await axios.get(`${apiUrl}/exercises/quiz/list`,{
         headers: {
