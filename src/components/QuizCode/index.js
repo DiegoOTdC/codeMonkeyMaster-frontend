@@ -3,18 +3,15 @@ import React, { useState, useEffect } from "react";
 import {
   Card,
   Button,
-  Form,
   Container,
   Row,
   Col,
-  Spinner,
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../store/user/selectors";
 
 import { useHistory } from "react-router"
 import { updateCompletedExercise } from "../../store/user/actions";
-import { sendCompletedQuiz } from "../../store/user/actions"
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
@@ -140,7 +137,7 @@ export default function QuizCode(props) {
         updateCompletedExercise(exerciseId, id, finalTime(), experience())
       );
       history.push("/homepage")
-  }, [dispatch, exerciseId, id, start, finish]);
+  }, [dispatch, exerciseId, id, start, finish, history]);
 
   function correctOrNot() {
     if (review === "") {

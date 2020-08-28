@@ -12,7 +12,6 @@ import Progressbar from "../../components/Progressbar"
 
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import { ProgressBar } from "react-bootstrap";
 
 export default function Homepage() {
   const dispatch = useDispatch();
@@ -24,13 +23,13 @@ export default function Homepage() {
   useEffect(() => {
     dispatch(removeCompletedExercises());
     dispatch(removeQuizQuestions());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (exercises.length === 0) {
       dispatch(getExercises());
     }
-  }, []);
+  }, [dispatch, exercises.length]);
 
   useEffect(() => {
     if (!searchTerm) {

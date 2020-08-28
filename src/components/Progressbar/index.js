@@ -1,6 +1,6 @@
 
 import React from "react"
-import {ProgressBar, Container, Col, Row, Card, Spinner} from "react-bootstrap"
+import {ProgressBar, Container, Col, Row, Card } from "react-bootstrap"
 
 
 const expProgress = [
