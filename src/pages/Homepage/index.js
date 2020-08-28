@@ -6,31 +6,30 @@ import {
 } from "../../store/exercise/actions";
 import { removeCompletedExercises } from "../../store/user/actions";
 import { selectMethod } from "../../store/exercise/selectors";
-import { selectUser } from "../../store/user/selectors"
+import { selectUser } from "../../store/user/selectors";
 import "./homepage.css";
-import Progressbar from "../../components/Progressbar"
+import Progressbar from "../../components/Progressbar";
 
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import { ProgressBar } from "react-bootstrap";
 
 export default function Homepage() {
   const dispatch = useDispatch();
   const exercises = useSelector(selectMethod);
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUser);
   const [searchTerm, setSearchTerm] = useState();
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     dispatch(removeCompletedExercises());
     dispatch(removeQuizQuestions());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (exercises.length === 0) {
       dispatch(getExercises());
     }
-  }, []);
+  }, [dispatch, exercises.length]);
 
   useEffect(() => {
     if (!searchTerm) {
@@ -51,7 +50,7 @@ export default function Homepage() {
 
   return (
     <div>
-      <Progressbar userData={user} /> 
+      <Progressbar userData={user} />
       <h3 className="hpTitle">Exercises</h3>
       <input
         className="searchBar"
@@ -79,17 +78,15 @@ export default function Homepage() {
           </Link>
         );
       })}
-      <Link
-        className="hpLink"
-        to="/exercise/random">
-      <Card className="hpCard">
-        <Card.Body className="homeCard">
-          <b>Random</b>
-          <br />
-          Exercises: <br />
-          MonkeyMaster:
-        </Card.Body>
-      </Card>
+      <Link className="hpLink" to="/exercise/random">
+        <Card className="hpCard">
+          <Card.Body className="homeCard">
+            <b>Random</b>
+            <br />
+            Exercises: <br />
+            MonkeyMaster:
+          </Card.Body>
+        </Card>
       </Link>
     </div>
   );

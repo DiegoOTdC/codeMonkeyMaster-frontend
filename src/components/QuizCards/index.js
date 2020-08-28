@@ -9,17 +9,15 @@ import {
   Spinner,
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router";
+import { useParams } from "react-router";
 import Popup from "reactjs-popup";
 import { selectUser } from "../../store/user/selectors";
 import { selectExercise } from "../../store/exercise/selectors";
 import { sendCompletedQuiz } from "../../store/user/actions";
 import Progressbar from "../Progressbar";
 import Hint from "../Hint";
-import hint from "../Hint";
 
 export default function QuizCards(props) {
-  const history = useHistory();
   const dispatch = useDispatch();
   const [answered, set_Answered] = useState(0);
   const [review, set_Review] = useState("");
@@ -253,6 +251,7 @@ export default function QuizCards(props) {
                     sendCompletedQuiz(exerciseIdNeeded, quizQuestions.id)
                   );
                   set_Review("");
+                  set_Color("");
                   set_Shuffle(Math.floor(Math.random() * 10) + 1);
                   set_Answered(answered + 1);
                 }}
