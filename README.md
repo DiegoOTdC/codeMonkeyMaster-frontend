@@ -40,7 +40,7 @@ This app was created in 5 days.
 <img src="./monkey-speak.png" width="auto" height=300 /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://avatars1.githubusercontent.com/u/66380445?s=400&u=19685fc849bb9e3a33e263c32dc48ca7c9244169&v=4" width="auto" height=270 />
 <br /> 
 <br />
-<a href="https://github.com/DiegoOTdC">Diégo Teixeira da Costa</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/DiegoOTdC">Diégo Teixeira da Costa</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 
 <a name="UserStories"/> 
