@@ -15,25 +15,20 @@ import { selectUser } from "../../store/user/selectors";
 import { sendCompletedQuiz } from "../../store/user/actions";
 import Progressbar from "../Progressbar";
 
-
-import { selectUser } from "../../store/user/selectors"
-import { sendCompletedQuiz } from "../../store/user/actions"
-import Progressbar from "../Progressbar"
-
-export default function QuizCards(props){
-    const history = useHistory()
-    const dispatch = useDispatch()
-    const [answered, set_Answered] = useState(0)
-    const [review, set_Review] = useState("")
-    // console.log("review test", review)
-    const [shuffle, set_Shuffle] = useState(Math.floor((Math.random()*10) + 1))
-    console.log("shuffle test", shuffle)
-    const quizQuestions = props.exercise
-    // console.log("quiz question check", quizQuestions)
-    const exerciseIdNeeded = quizQuestions.id
-    console.log("exercise Id test", exerciseIdNeeded)
-    const userNeeded = useSelector(selectUser)
-    console.log("here is the user", userNeeded)
+export default function QuizCards(props) {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const [answered, set_Answered] = useState(0);
+  const [review, set_Review] = useState("");
+  // console.log("review test", review)
+  const [shuffle, set_Shuffle] = useState(Math.floor(Math.random() * 10 + 1));
+  console.log("shuffle test", shuffle);
+  const quizQuestions = props.exercise;
+  // console.log("quiz question check", quizQuestions)
+  const exerciseIdNeeded = quizQuestions.id;
+  console.log("exercise Id test", exerciseIdNeeded);
+  const userNeeded = useSelector(selectUser);
+  console.log("here is the user", userNeeded);
 
   if (quizQuestions === undefined) {
     return <Spinner animation="border" variant="warning" />;
