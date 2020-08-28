@@ -138,7 +138,7 @@ export default function QuizCode(props) {
       dispatch(
         updateCompletedExercise(exerciseId, id, finalTime(), experience())
       );
-    history.push("/homepage");
+    finish && history.push("/homepage");
   }, [dispatch, exerciseId, id, start, finish]);
 
   function correctOrNot() {
@@ -183,7 +183,7 @@ export default function QuizCode(props) {
                     </div>
                   ) : null}
                 </Row>
-                Level 1: Quiz Questions
+                Level 2: Quiz Code
               </Card.Title>
               <Card.Text>
                 <span
