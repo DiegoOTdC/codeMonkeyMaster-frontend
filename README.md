@@ -86,6 +86,21 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 5. [Stephanie Home Page](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/5)   
 6. [Diego Quiz Code](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/6)   
 7. [Diego Fixed The Time Logic](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/7)   
+8. [Stephanie added hint component, changed animations](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/8)  
+9. [Darian cards quiz](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/9)  
+10. [Stephanie added some small styling changes](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/10)  
+11. [Stephanie testing](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/11)  
+12. [changed login logout logic](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/12)  
+13. [Darian level bar](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/13)  
+14. [Diego fix logic display questions](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/14)  
+15. [Darian quiz intergration](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/15)  
+16. [Diego style quiz code](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/16)  
+17. [Diego small changes](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/17)  
+18. [Diego fix warnings ](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/18)  
+19. [Stephanie quizcard](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/19)  
+20. [Diego add and hide the server api ](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/20)  
+21. [Darian profile ](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/21)  
+22. [Darian Hint and example on QuizCodes](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/22)  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Go to Top](#code-monkey-master)   
 **Backend**   
@@ -94,7 +109,11 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 3. [Darian Quiz Setup 1](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/3)   
 4. [Darian Quiz Setup 2](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/4)   
 5. [Darian Merge Pull Request #3](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/5)   
-6. [Darian Scaled Down To One Join Table](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/6)   
+6. [Darian Scaled Down To One Join Table](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/6)
+7. [Darian progress](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/7)
+8. [Stephanie fixed signup](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/8)
+9. [Diego change production config.js](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/9)
+10. [Diego change config again](https://github.com/codeMonkeyMasters/codeMonkeyMaster-backend/pull/10)   
 
 <a name="ImportantLinks"/> 
 
