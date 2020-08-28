@@ -25,7 +25,9 @@ export default function QuizCards(props) {
   console.log("shuffle test", shuffle);
   const quizQuestions = props.exercise;
   // console.log("quiz question check", quizQuestions)
-  const exerciseIdNeeded = quizQuestions.id;
+  const params = useParams();
+  const exerciseIdNeeded = parseInt(params.id);
+  console.log("ExerciseIDNEEDDED", exerciseIdNeeded);
   console.log("exercise Id test", exerciseIdNeeded);
   const userNeeded = useSelector(selectUser);
   console.log("here is the user", userNeeded);
