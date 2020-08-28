@@ -161,6 +161,7 @@ export const updateCompletedExercise = (exerciseId, quizId, timeTaken, exp) => {
 
       if (response.status === 202) {
         dispatch(getCompletedExercisesSuccess([response.data.completed]));
+        dispatch(tokenStillValid(response.data.user))
         dispatch(appDoneLoading());
       }
     } catch (error) {

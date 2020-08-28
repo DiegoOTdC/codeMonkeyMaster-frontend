@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router"
 import { updateCompletedExercise } from "../../store/user/actions";
+import { selectUser } from "../../store/user/selectors"
+import { sendCompletedQuiz } from "../../store/user/actions"
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/theme/material.css";
+import Progressbar from "../Progressbar";
 
 export default function QuizCode(props) {
+  const history = useHistory();
+  const user = useSelector(selectUser)
   const { exercise } = props;
   const { answer, question, exerciseId, id } = exercise;
+  console.log("question", question)
   const dispatch = useDispatch();
   const [code, setCode] = useState("");
   const [message, setMessage] = useState("");
@@ -50,6 +57,7 @@ export default function QuizCode(props) {
         text: "Long live the master! - This answer is correct!",
       });
       setFinish(`${hours}:${minutes}:${seconds}`);
+      console.log("time", finish)
     }
   }
 
@@ -116,11 +124,14 @@ export default function QuizCode(props) {
       dispatch(
         updateCompletedExercise(exerciseId, id, finalTime(), experience())
       );
+      history.push("/homepage")
   }, [dispatch, exerciseId, id, start, finish]);
 
   return (
     <div style={{ margin: "auto", width: "75%", backgroundColor: "grey" }}>
-      {start && <h1>{question}</h1>}
+      <Progressbar userData={user} />
+     <h1>{question}</h1>
+     {start} 
       <CodeMirror
         value={code}
         options={{ mode: "javascript", ...codeMirrorOptions }}
