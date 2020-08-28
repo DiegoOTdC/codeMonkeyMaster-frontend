@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import {
   Card,
   Button,
@@ -10,19 +11,27 @@ import {
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../store/user/selectors";
+
 import { updateCompletedExercise } from "../../store/user/actions";
+import { selectUser } from "../../store/user/selectors"
+import { sendCompletedQuiz } from "../../store/user/actions"
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/theme/material.css";
 import Progressbar from "../Progressbar";
+
 import "./index.css";
 
 import Timer from "../Timer";
 
+
 export default function QuizCode(props) {
+  const history = useHistory();
+  const user = useSelector(selectUser)
   const { exercise } = props;
   const { answer, question, exerciseId, id } = exercise;
+  console.log("question", question)
   const dispatch = useDispatch();
   const [code, setCode] = useState("");
   const [start, setStart] = useState("");
@@ -30,7 +39,6 @@ export default function QuizCode(props) {
   const [timer, setTimer] = useState(false);
 
   const [review, set_Review] = useState("");
-  const userNeeded = useSelector(selectUser);
 
   const date = new Date();
   const hours = date.getHours();
@@ -66,6 +74,7 @@ export default function QuizCode(props) {
       set_Review("correct");
       setTimer(false);
       setFinish(`${hours}:${minutes}:${seconds}`);
+      console.log("time", finish)
     }
   }
 
@@ -130,6 +139,7 @@ export default function QuizCode(props) {
       dispatch(
         updateCompletedExercise(exerciseId, id, finalTime(), experience())
       );
+      history.push("/homepage")
   }, [dispatch, exerciseId, id, start, finish]);
 
   function correctOrNot() {
@@ -159,7 +169,7 @@ export default function QuizCode(props) {
               <Card.Title>
                 <Row>
                   <div style={{ display: "inline-block" }}>
-                    <Progressbar userData={userNeeded} />
+                    <Progressbar userData={user} />
                   </div>
                   {start ? (
                     <div
@@ -228,5 +238,4 @@ export default function QuizCode(props) {
         </Col>
       </Row>
     </Container>
-  );
-}
+

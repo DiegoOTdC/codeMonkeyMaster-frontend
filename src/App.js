@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Welcome from "./pages/Welcome";
 import Homepage from "./pages/Homepage";
 import Exercise from "./pages/Exercise";
+import RandomExercise from "./pages/RandomExercise"
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
@@ -44,6 +45,10 @@ function App() {
         <Route
           path="/homepage"
           render={(routerProps) => protectedRoutes(Homepage, routerProps)}
+        />
+        <Route
+          path="/exercise/random"
+          render={(routerProps) => protectedRoutes(RandomExercise, routerProps)}
         />
         <Route
           path="/exercise/:id"

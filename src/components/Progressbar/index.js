@@ -1,24 +1,26 @@
-import React from "react";
-import { ProgressBar, Container, Col, Row, Card } from "react-bootstrap";
+
+import React from "react"
+import {ProgressBar, Container, Col, Row, Card, Spinner} from "react-bootstrap"
+
 
 const expProgress = [
-  {
-    rank: "Code Monkey",
-    total: 30,
-  },
-  {
-    rank: "Coder",
-    total: 90,
-  },
-  {
-    rank: "Code Wizard",
-    total: 180,
-  },
-  {
-    rank: "Code Master",
-    total: 360,
-  },
-];
+    {
+      rank: "Code Monkey",
+      total: 30,
+    },
+    {
+      rank: "Coder",
+      total: 90,
+    },
+    {
+      rank: "Code Wizard",
+      total: 180,
+    },
+    {
+      rank: "Code Master",
+      total: 360,
+    },
+  ]
 
 export default function Progressbar(props) {
   const user = props.userData;
