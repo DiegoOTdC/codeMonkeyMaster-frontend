@@ -20,7 +20,8 @@ export default function QuizCards(props) {
   const dispatch = useDispatch();
   const [answered, set_Answered] = useState(0);
   const [review, set_Review] = useState("");
-  // console.log("review test", review)
+  const [color, set_Color] = useState("");
+  console.log("review test", review);
   const [shuffle, set_Shuffle] = useState(Math.floor(Math.random() * 10 + 1));
   console.log("shuffle test", shuffle);
   const quizQuestions = props.exercise;
@@ -37,11 +38,11 @@ export default function QuizCards(props) {
   }
 
   function correctOrNot() {
-    if (review === "") {
+    if (color === "") {
       return "info";
-    } else if (review === "incorrect") {
+    } else if (color === "incorrect") {
       return "danger";
-    } else if (review === "correct") {
+    } else if (color === "correct") {
       return "success";
     } else {
       return "warning";
@@ -216,6 +217,16 @@ export default function QuizCards(props) {
               {randomAnswers(shuffle)}
               <Button
                 variant="outline-warning"
+                onClick={(event) => set_Color(review)}
+              >
+                <span role="img" aria-label="banana">
+                  🍌
+                </span>{" "}
+                Check answer
+              </Button>
+              <br />
+              <Button
+                variant="outline-warning"
                 onClick={() => {
                   dispatch(
                     sendCompletedQuiz(exerciseIdNeeded, quizQuestions.id)
@@ -225,9 +236,11 @@ export default function QuizCards(props) {
                   set_Answered(answered + 1);
                 }}
               >
+                {" "}
                 <span role="img" aria-label="banana">
                   🍌
                 </span>
+                Next question
               </Button>
             </Card.Body>
           </Card>
