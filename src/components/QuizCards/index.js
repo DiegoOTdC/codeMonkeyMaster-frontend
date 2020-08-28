@@ -9,14 +9,13 @@ import {
   Spinner,
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router";
+import { useParams } from "react-router";
 
 import { selectUser } from "../../store/user/selectors";
 import { sendCompletedQuiz } from "../../store/user/actions";
 import Progressbar from "../Progressbar";
 
 export default function QuizCards(props) {
-  const history = useHistory();
   const dispatch = useDispatch();
   const [answered, set_Answered] = useState(0);
   const [review, set_Review] = useState("");
