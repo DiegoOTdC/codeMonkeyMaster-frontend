@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { logOut } from "../../store/user/actions";
 import { selectUser } from "../../store/user/selectors";
-import Nav from "react-bootstrap/Nav";
 import NavbarItem from "./NavbarItem";
 
 export default function LoggedIn() {
@@ -14,7 +13,7 @@ export default function LoggedIn() {
   return (
     <>
       <NavbarItem path="/homepage" linkText="Home" />
-      <Nav.Item style={{ padding: ".5rem 1rem" }}>{user.email}</Nav.Item>
+      <NavbarItem path="/profile" linkText={user.email} />
       <button
         style={{
           backgroundColor: "#009973",

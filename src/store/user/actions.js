@@ -197,3 +197,30 @@ export function sendCompletedQuiz(exerciseId, quizId) {
     }
   };
 }
+
+export function updateUser(fullName){
+  return async function(dispatch, getState){
+    const tokenNeeded = getState().token
+    try{
+      const user = await axios.patch(`${apiUrl}/profile/user`,{
+        fullName,
+      },{
+        headers: {
+          Authorization: `Bearer ${tokenNeeded}`
+        }
+      })
+      console.log("user test", user)
+
+      // dispatch(tokenStillValid(user.data))
+      // dispatch(appDoneLoading())
+
+    } catch(error){
+      if (error.response) {
+        console.log(error.response.message);
+      } else {
+        console.log(error);
+      }
+      dispatch(appDoneLoading());
+    }
+  }
+}

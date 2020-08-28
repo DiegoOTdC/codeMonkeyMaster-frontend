@@ -15,6 +15,7 @@ import RandomExercise from "./pages/RandomExercise"
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -53,6 +54,10 @@ function App() {
         <Route
           path="/exercise/:id"
           render={(routerProps) => protectedRoutes(Exercise, routerProps)}
+        />
+        <Route
+          path="/profile"
+          render={(routerProps) => protectedRoutes(ProfilePage, routerProps)}
         />
       </Switch>
     </div>

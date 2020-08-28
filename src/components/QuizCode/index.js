@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../store/user/selectors";
 import { useHistory } from "react-router";
 
+import { useHistory } from "react-router"
 import { updateCompletedExercise } from "../../store/user/actions";
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
@@ -228,5 +228,6 @@ export default function QuizCode(props) {
         </Col>
       </Row>
     </Container>
+
   );
 }
