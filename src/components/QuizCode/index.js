@@ -3,6 +3,8 @@ import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../store/user/selectors";
 import { useHistory } from "react-router";
+import Popup from "reactjs-popup";
+import Hint from "../Hint";
 import { updateCompletedExercise } from "../../store/user/actions";
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
@@ -18,7 +20,7 @@ export default function QuizCode(props) {
   const history = useHistory();
   const user = useSelector(selectUser);
   const { exercise } = props;
-  const { answer, question, exerciseId, id } = exercise;
+  const { answer, question, exerciseId, id, example, hint } = exercise;
   console.log("question", question);
   const dispatch = useDispatch();
   const [code, setCode] = useState("");
@@ -39,6 +41,22 @@ export default function QuizCode(props) {
     scrollbarStyle: null,
     lineWrapping: true,
   };
+
+  const PopupHint = () => (
+    <Popup
+      trigger={
+        <Button variant="outline-warning">
+          <span role="img" aria-label="hint">
+            💡
+          </span>{" "}
+          Hint
+        </Button>
+      }
+      position="right center"
+    >
+      <Hint hint={hint} />
+    </Popup>
+  );
 
   function equal(a, b) {
     const condition2 = typeof a === "string" && typeof b === "string";
@@ -182,6 +200,10 @@ export default function QuizCode(props) {
                 >
                   {start && question}
                 </span>
+                <br />
+                <span>
+                  {start && example}
+                </span>
               </Card.Text>
               <br />
               <div className="TopCodeMirror">
@@ -221,6 +243,9 @@ export default function QuizCode(props) {
                   </span>
                 </Button>
               )}
+              {start && <PopupHint />}
+              <br />
+
             </Card.Body>
           </Card>
         </Col>
