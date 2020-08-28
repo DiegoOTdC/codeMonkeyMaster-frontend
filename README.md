@@ -90,7 +90,7 @@ We used [Codaisseur's frontend template](https://github.com/Codaisseur/react-red
 9. [Darian cards quiz](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/9)  
 10. [Stephanie added some small styling changes](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/10)  
 11. [Stephanie testing](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/11)  
-12. [changed login logout logic](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/12)  
+12. [Stephanie changed login logout logic](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/12)  
 13. [Darian level bar](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/13)  
 14. [Diego fix logic display questions](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/14)  
 15. [Darian quiz intergration](https://github.com/codeMonkeyMasters/codeMonkeyMaster-frontend/pull/15)  
