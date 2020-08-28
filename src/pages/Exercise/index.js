@@ -14,7 +14,7 @@ export default function Exercise() {
   console.log("param", param);
   const exerciseId = parseInt(param.id);
   console.log("ex id test", exerciseId);
-  
+
   const dispatch = useDispatch();
   const allCurrentExercises = useSelector(selectExercise);
   const completedExercises = useSelector(selectCompletedExercises);

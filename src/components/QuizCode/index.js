@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from "react";
+
+import {
+  Card,
+  Button,
+  Form,
+  Container,
+  Row,
+  Col,
+  Spinner,
+} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router"
+import { selectUser } from "../../store/user/selectors";
+
 import { updateCompletedExercise } from "../../store/user/actions";
 import { selectUser } from "../../store/user/selectors"
 import { sendCompletedQuiz } from "../../store/user/actions"
@@ -10,6 +21,11 @@ import "codemirror/mode/javascript/javascript";
 import "codemirror/theme/material.css";
 import Progressbar from "../Progressbar";
 
+import "./index.css";
+
+import Timer from "../Timer";
+
+
 export default function QuizCode(props) {
   const history = useHistory();
   const user = useSelector(selectUser)
@@ -18,9 +34,11 @@ export default function QuizCode(props) {
   console.log("question", question)
   const dispatch = useDispatch();
   const [code, setCode] = useState("");
-  const [message, setMessage] = useState("");
   const [start, setStart] = useState("");
   const [finish, setFinish] = useState("");
+  const [timer, setTimer] = useState(false);
+
+  const [review, set_Review] = useState("");
 
   const date = new Date();
   const hours = date.getHours();
@@ -41,21 +59,20 @@ export default function QuizCode(props) {
 
   function startExercise() {
     setStart(`${hours}:${minutes}:${seconds}`);
+    setTimer(true);
   }
 
   function finishExercise() {
     const result = equal(answer, code);
     if (!result) {
-      setMessage({
-        backgroundColor: "red",
-        text: "oeh-oeh-ahh-ahh monkey want banana? - This answer is incorrect!",
-      });
+      set_Review("incorrect");
+      setTimeout(() => {
+        set_Review("");
+      }, 1500);
     }
     if (result) {
-      setMessage({
-        backgroundColor: "green",
-        text: "Long live the master! - This answer is correct!",
-      });
+      set_Review("correct");
+      setTimer(false);
       setFinish(`${hours}:${minutes}:${seconds}`);
       console.log("time", finish)
     }
@@ -118,8 +135,6 @@ export default function QuizCode(props) {
       }
     };
 
-    console.log("we get here?");
-
     finish &&
       dispatch(
         updateCompletedExercise(exerciseId, id, finalTime(), experience())
@@ -127,32 +142,100 @@ export default function QuizCode(props) {
       history.push("/homepage")
   }, [dispatch, exerciseId, id, start, finish]);
 
+  function correctOrNot() {
+    if (review === "") {
+      return "info";
+    } else if (review === "incorrect") {
+      return "danger";
+    } else if (review === "correct") {
+      return "success";
+    } else {
+      return "warning";
+    }
+  }
+
   return (
-    <div style={{ margin: "auto", width: "75%", backgroundColor: "grey" }}>
-      <Progressbar userData={user} />
-     <h1>{question}</h1>
-     {start} 
-      <CodeMirror
-        value={code}
-        options={{ mode: "javascript", ...codeMirrorOptions }}
-        onBeforeChange={(editor, data, js) => {
-          setCode(js);
-        }}
-      />
+    <Container>
+      <Row>
+        <Col>
+          <Card
+            bg={correctOrNot()}
+            style={{
+              width: "60rem",
+            }}
+          >
+            <Card.Body>
+              {" "}
+              <Card.Title>
+                <Row>
+                  <div style={{ display: "inline-block" }}>
+                    <Progressbar userData={user} />
+                  </div>
+                  {start ? (
+                    <div
+                      style={{
+                        display: "inline-block",
+                        marginLeft: "auto",
+                        marginRight: "5%",
+                        marginTop: "1em",
+                      }}
+                    >
+                      <Timer timer={timer} finish={finish} />
+                    </div>
+                  ) : null}
+                </Row>
+                Level 1: Quiz Questions
+              </Card.Title>
+              <Card.Text>
+                <span
+                  style={{
+                    fontSize: 30,
+                  }}
+                >
+                  {start && question}
+                </span>
+              </Card.Text>
+              <br />
+              <div className="TopCodeMirror">
+                <CodeMirror
+                  value={
+                    code || start
+                      ? code
+                      : `console.log("Please press the hourglass to start the exercise! => Remember!! It's on time!")`
+                  }
+                  options={{ mode: "javascript", ...codeMirrorOptions }}
+                  onBeforeChange={(editor, data, js) => {
+                    setCode(js);
+                  }}
+                />
+              </div>
+              <br />
+              {!start ? (
+                <Button
+                  variant="outline-warning"
+                  onClick={() => {
+                    startExercise();
+                  }}
+                >
+                  <span role="img" aria-label="hourglass">
+                    &#8987;
+                  </span>
+                </Button>
+              ) : (
+                <Button
+                  variant="outline-warning"
+                  onClick={() => {
+                    finishExercise();
+                  }}
+                >
+                  <span role="img" aria-label="hourglass">
+                    &#9203;
+                  </span>
+                </Button>
+              )}
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
 
-      {message && (
-        <p
-          style={{ backgroundColor: message.backgroundColor, color: "yellow" }}
-        >
-          {message.text}
-        </p>
-      )}
-
-      {!start ? (
-        <button onClick={() => startExercise()}>Start</button>
-      ) : (
-        <button onClick={() => finishExercise()}>Finish</button>
-      )}
-    </div>
-  );
-}
