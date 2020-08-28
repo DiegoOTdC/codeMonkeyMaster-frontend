@@ -1,14 +1,12 @@
 .welcomeHeader {
   background: #018c65;
   width: 100%;
-  height: 20em;
 }
 
 .welcomeGif {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
   width: 50%;
   background: #009973;
 }

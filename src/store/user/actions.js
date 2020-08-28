@@ -42,6 +42,7 @@ export const logOut = () => ({ type: LOG_OUT });
 export const signUp = (fullName, email, password) => {
   return async (dispatch, getState) => {
     dispatch(appLoading());
+    console.log("full name", fullName);
     try {
       const response = await axios.post(`${apiUrl}/signup`, {
         fullName,
@@ -66,6 +67,7 @@ export const signUp = (fullName, email, password) => {
 };
 
 export const login = (email, password) => {
+  console.log("what is the apiURL", apiUrl);
   return async (dispatch, getState) => {
     dispatch(appLoading());
     try {
@@ -161,7 +163,7 @@ export const updateCompletedExercise = (exerciseId, quizId, timeTaken, exp) => {
 
       if (response.status === 202) {
         dispatch(getCompletedExercisesSuccess([response.data.completed]));
-        dispatch(tokenStillValid(response.data.user))
+        dispatch(tokenStillValid(response.data.user));
         dispatch(appDoneLoading());
       }
     } catch (error) {

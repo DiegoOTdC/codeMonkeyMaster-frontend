@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
-
-import {
-  Card,
-  Button,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../store/user/selectors";
+import { useHistory } from "react-router";
 
 import { useHistory } from "react-router"
 import { updateCompletedExercise } from "../../store/user/actions";
@@ -22,13 +16,12 @@ import "./index.css";
 
 import Timer from "../Timer";
 
-
 export default function QuizCode(props) {
   const history = useHistory();
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUser);
   const { exercise } = props;
   const { answer, question, exerciseId, id } = exercise;
-  console.log("question", question)
+  console.log("question", question);
   const dispatch = useDispatch();
   const [code, setCode] = useState("");
   const [start, setStart] = useState("");
@@ -71,7 +64,7 @@ export default function QuizCode(props) {
       set_Review("correct");
       setTimer(false);
       setFinish(`${hours}:${minutes}:${seconds}`);
-      console.log("time", finish)
+      console.log("time", finish);
     }
   }
 
@@ -136,7 +129,7 @@ export default function QuizCode(props) {
       dispatch(
         updateCompletedExercise(exerciseId, id, finalTime(), experience())
       );
-      history.push("/homepage")
+    finish && history.push("/homepage");
   }, [dispatch, exerciseId, id, start, finish, history]);
 
   function correctOrNot() {
@@ -181,7 +174,7 @@ export default function QuizCode(props) {
                     </div>
                   ) : null}
                 </Row>
-                Level 1: Quiz Questions
+                Level 2: Quiz Code
               </Card.Title>
               <Card.Text>
                 <span
@@ -235,5 +228,6 @@ export default function QuizCode(props) {
         </Col>
       </Row>
     </Container>
-  )
+
+  );
 }
