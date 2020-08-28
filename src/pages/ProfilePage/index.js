@@ -1,36 +1,50 @@
-import React from "react"
-import { Card, Button, Form } from "react-bootstrap"
+import React, { useEffect } from "react"
+import { Card, Button,Col, Container, Row } from "react-bootstrap"
+import Form from "react-bootstrap/Form"
+import { useSelector, useDispatch } from "react-redux"
+
+import { getCompletedExercises, getUserWithStoredToken } from "../../store/user/actions"
+import { selectCompletedExercises } from "../../store/user/selectors"
+import CompletedExercises from "../../components/CompletedExercises"
 
 export default function ProfilePage(){
+    const dispatch = useDispatch()
+    const exercises = useSelector(selectCompletedExercises)
+    console.log("exercise test", exercises)
+
+    useEffect(() => {
+        if(exercises.length === 0){
+            dispatch(getCompletedExercises())
+        }
+    }, [dispatch, exercises.length])
+
     return (
-        <Card>
-            <Card.Img />
-            <Card.Body>
-                <Card.Title>
-                    User,s Name
-                </Card.Title>
-                <Card.Text>
-                    Form for user here
-                </Card.Text>
+        <Container>
+        <Row>
+            <Col>
+                <Card>
+                    <Card.Img />
+                    <Card.Body>
+                        <Card.Title>
+                            User,s Name
+                        </Card.Title>
+                        <Card.Text>
+                            Form for user here
+                        </Card.Text>
+                        <CompletedExercises exerciseData={exercises} />
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col>
                 <Form>
-                <Form.Row>
                     <Form.Group
-                        controlId="formGridImage"
-                        as={Col}
-                        md={2}>
-                        <Form.Label>
-                            Profile Picture:
-                        </Form.Label>
-                        <Form.File
-                            id="imageFile"
-                        />
+                        controlId="formImage">
+                        {/* <Form.File
+                            id="exampleFormControlFile1" /> */}
                     </Form.Group>
-                </Form.Row>
-                <Form.Row>
+
                     <Form.Group
-                        as={Col}
-                        md={1}
-                        controlId="formGridFullname">
+                        controlId="formFullname">
                         <Form.Label>
                             Full Name:
                         </Form.Label>
@@ -38,10 +52,9 @@ export default function ProfilePage(){
                             type="input"
                             placeholder="['Enter', 'Name']" />
                     </Form.Group>
+
                     <Form.Group
-                        as={Col}
-                        md={1}
-                        controlId="formGridEmail">
+                        controlId="formEmail">
                         <Form.Label>
                             Email:
                         </Form.Label>
@@ -49,12 +62,13 @@ export default function ProfilePage(){
                             type="email"
                             placeholder="['example', '@gmail', '.com']" />
                     </Form.Group>
-                </Form.Row>
+
                 </Form>
                 <Button>
                     Update my info!
                 </Button>
-            </Card.Body>
-        </Card>
+            </Col>
+            </Row>
+        </Container>
     )
 }

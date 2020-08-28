@@ -16,10 +16,6 @@ import { sendCompletedQuiz } from "../../store/user/actions";
 import Progressbar from "../Progressbar";
 
 
-import { selectUser } from "../../store/user/selectors"
-import { sendCompletedQuiz } from "../../store/user/actions"
-import Progressbar from "../Progressbar"
-
 export default function QuizCards(props){
     const history = useHistory()
     const dispatch = useDispatch()
